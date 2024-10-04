@@ -33,7 +33,6 @@ onMounted(() => {
       toggleActions: "play none none reverse",
       start: "top top", // when the top of the trigger hits the top of the viewport
       end: "+=500", // end after scrolling 500px beyond the start
-      markers: true,
     },
   });
 });
