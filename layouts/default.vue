@@ -4,6 +4,7 @@ footerId.value = "01";
 </script>
 
 <template>
+  <MyCursor />
   <MyHeader />
   <main>
     <NuxtPage />
