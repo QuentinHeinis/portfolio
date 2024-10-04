@@ -23,8 +23,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/image", "@tresjs/nuxt"],
-  tres: {
-    glsl: true,
-  },
+  modules: ["@nuxt/image"],
 });
