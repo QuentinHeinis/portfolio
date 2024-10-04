@@ -17,7 +17,7 @@
   color: inherit;
   text-decoration: none;
   min-width: 80vw;
-  height: 65vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
