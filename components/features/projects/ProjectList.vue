@@ -39,7 +39,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <MySection id="02" sectionName="Mon portfolio" class="projects">
+  <MySection
+    id="02"
+    sectionName="Mon portfolio"
+    class="projects"
+    class-name="projects__content -nopt"
+  >
     <div ref="projectList" class="projects__list">
       <ProjectCard
         v-for="project in projects"
@@ -49,7 +54,12 @@ onMounted(() => {
     </div>
   </MySection>
 </template>
-
+<style>
+.projects__content.-nopt {
+  height: 100%;
+  padding-top: 0;
+}
+</style>
 <style lang="scss" scoped>
 .projects {
   overflow: hidden;
@@ -58,6 +68,8 @@ onMounted(() => {
   &__list {
     display: flex;
     white-space: nowrap;
+    align-items: center;
+    height: 100%;
     gap: 10vw;
   }
 }
