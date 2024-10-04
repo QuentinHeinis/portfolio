@@ -11,7 +11,9 @@ const toggleMenu = () => {
 
 <template>
   <header class="header">
-    <div><img src="/img/logoblack.png" alt="" /></div>
+    <div>
+      <!-- <img src="/img/logoblack.png" alt="" /> -->
+    </div>
     <MyNav :isOpen :linkClick="() => toggleMenu()" />
     <div class="header__btn">
       <MyBtn @click="isOpen ? toggleMenu() : null" href="/">Me contacter</MyBtn>

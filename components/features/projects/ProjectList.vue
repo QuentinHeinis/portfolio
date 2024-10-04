@@ -61,12 +61,5 @@ onMounted(() => {
     white-space: nowrap;
     gap: 10vw;
   }
-  &__item {
-    min-width: 80vw;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 }
 </style>
