@@ -14,6 +14,10 @@ watch(
   }
 );
 
+const tl = gsap.timeline({
+  repeat: 0,
+});
+
 const toggleMenu = () => {
   if (props.isOpen) {
     tl.play();
@@ -23,10 +27,6 @@ const toggleMenu = () => {
 
   document.querySelector("html")?.classList.toggle("no-scroll");
 };
-
-const tl = gsap.timeline({
-  repeat: 0,
-});
 
 onBeforeMount(() => {
   // setup default value to menu
@@ -75,7 +75,9 @@ onBeforeMount(() => {
             <MyLink @click="linkClick()" number="02" href="/">A propos</MyLink>
           </li>
           <li>
-            <MyLink @click="linkClick()" number="03" href="/projets">Projets</MyLink>
+            <MyLink @click="linkClick()" number="03" href="/projets"
+              >Projets</MyLink
+            >
           </li>
           <li>
             <MyLink @click="linkClick()" number="04" href="/">Contact</MyLink>
