@@ -1,6 +1,12 @@
 <script setup>
 import Lenis from "lenis";
 
+const nuxtApp = useNuxtApp();
+
+nuxtApp.hook("page:finish", () => {
+  window.scrollTo(0, 0);
+});
+
 onMounted(() => {
   const lenis = useState("lenis", () => new Lenis());
 
