@@ -1,0 +1,79 @@
+@mixin xsmall-up {
+  @media screen and (min-width: ($xs)) {
+    @content;
+  }
+}
+
+@mixin small-up {
+  @media screen and (min-width: ($sm)) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media screen and (min-width: ($md)) {
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media screen and (min-width: ($lg)) {
+    @content;
+  }
+}
+
+@mixin xlarge-up {
+  @media screen and (min-width: ($xl)) {
+    @content;
+  }
+}
+
+@mixin xxlarge-up {
+  @media screen and (min-width: ($xxl)) {
+    @content;
+  }
+}
+
+@mixin hoverEffect($color, $variant : 'default') {
+
+
+  @if $variant == 'default' {
+    overflow: hidden;
+    &::after {
+      content: "";
+      background: $color;
+      border-radius: 20%;
+      width: 100%;
+      height: 100%;
+  
+      position: absolute;
+      translate: 0 100%;
+      transition: translate 0.3s ease;
+      z-index: -1;
+    }
+    &:hover::after {
+      translate: 0;
+    }
+  }
+
+  @if $variant == 'secondary' {
+    border: 1px solid $color;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: "";
+      background: $color;
+      border-radius: 20%;
+      width: 0;
+      height: 100%;
+  
+      position: absolute;
+      translate: 0 0;
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

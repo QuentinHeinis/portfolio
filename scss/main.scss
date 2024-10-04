@@ -1,0 +1,33 @@
+@import "./foundations/reset";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #171717;
+}
+
+.no-scroll, .no-scroll body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
