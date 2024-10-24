@@ -9,7 +9,7 @@
     id="01"
     section-name="Mon approche"
     class="section"
-    background-color="rgb(46, 34, 34)"
+    background-color="rgb(29, 17, 22)"
   >
     <HomeApproche />
   </MySection>

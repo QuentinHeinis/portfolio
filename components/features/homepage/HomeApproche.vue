@@ -3,7 +3,7 @@
 <template>
   <ul class="approche">
     <li class="approche__card">
-      <MyGridBg />
+      <MyGridBg background="rgb(36, 22, 28)" />
       <div class="approche__video">
         <video src="/video/circularFluid.mp4" muted playsinline autoplay loop />
       </div>
@@ -16,7 +16,7 @@
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg />
+      <MyGridBg background="rgb(36, 22, 28)" />
       <div class="approche__video">
         <video
           src="/video/circularFluid-blue.mp4"
@@ -35,7 +35,7 @@
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg />
+      <MyGridBg background="rgb(36, 22, 28)" />
       <div class="approche__video">
         <video
           src="/video/circularFluid-purple.mp4"
@@ -54,7 +54,7 @@
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg />
+      <MyGridBg background="rgb(36, 22, 28)" />
       <div class="approche__video">
         <video src="/video/circularFluid.mp4" muted playsinline autoplay loop />
       </div>
@@ -67,7 +67,7 @@
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg />
+      <MyGridBg background="rgb(36, 22, 28)" />
       <div class="approche__video">
         <video
           src="/video/circularFluid-blue.mp4"
