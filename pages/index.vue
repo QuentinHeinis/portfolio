@@ -22,7 +22,13 @@
   >
     <HomePrestations />
   </MySection>
-  <MySection id="03" section-name="A propos" class="section">
+  <MySection
+    id="03"
+    section-name="A propos"
+    class="section"
+    background-color="#e3ffde"
+    text-color="#000"
+  >
     <HomeAbout />
   </MySection>
 </template>
