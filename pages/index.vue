@@ -1,4 +1,7 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const footerId = useState("footerId");
+footerId.value = "04";
+</script>
 
 <template>
   <section class="hero">
