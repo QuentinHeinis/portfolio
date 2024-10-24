@@ -116,7 +116,7 @@ defineProps({
     height: rem(68);
     display: flex;
     align-items: center;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(255, 255, 255);
     span {
       font-weight: 600;
     }
