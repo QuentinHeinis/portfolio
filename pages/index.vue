@@ -1,25 +1,38 @@
-<script lang="ts" setup>
-import { emitLeaveHovered, emitHovered } from "~/utils/emit";
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <section>
-    <div>
-      <!-- <h1 @mouseleave="emitLeaveHovered" @mouseover="emitHovered">Home</h1>
-      <p>
-        My name is <strong>John Doe</strong> and I'm a
-        <strong>Web Developer</strong> based in <strong>Paris</strong>.
-      </p>
-      <MyBtn href="/about">About me</MyBtn> -->
-    </div>
-    <!-- <MyRipples /> -->
+  <section class="hero">
+    <!-- <HomeHero /> -->
+    <MyHero />
   </section>
-  <section class="section"></section>
+  <MySection
+    id="01"
+    section-name="Mon approche"
+    class="section"
+    background-color="#503232"
+  >
+    <HomeApproche />
+  </MySection>
+  <MySection
+    id="02"
+    section-name="Mes prestations"
+    background-color="#101010"
+    class="section"
+  >
+    <HomePrestations />
+  </MySection>
+  <MySection id="03" section-name="A propos" class="section">
+    <HomeAbout />
+  </MySection>
 </template>
 
 <style lang="scss" scoped>
 section {
-  min-height: 100vh;
   background: rgb(38, 34, 46);
+}
+
+.hero {
+  position: relative;
+  min-height: fit-content;
 }
 </style>
