@@ -16,7 +16,8 @@
   <MySection
     id="02"
     section-name="Mes prestations"
-    background-color="#101010"
+    background-color="#dfecdc"
+    text-color="#000"
     class="section"
   >
     <HomePrestations />

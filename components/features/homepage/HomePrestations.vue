@@ -1,13 +1,104 @@
 <script lang="ts" setup></script>
 
 <template>
-  <ul>
-    <li>Site vitrine</li>
-    <li>E Commerce</li>
-    <li>Web app</li>
-    <li>Mobile app</li>
-    <li>Maintenance</li>
-  </ul>
+  <MyList>
+    <MyListItem
+      >Site vitrine
+
+      <template #description>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          perspiciatis odio, ipsum numquam eligendi ipsa velit debitis eum
+          libero? Quis, in, distinctio sunt neque ab repellendus mollitia nobis
+          laborum, perspiciatis reiciendis nisi a modi. Ex unde quia blanditiis
+          expedita nisi cum repellat, possimus modi, magnam animi necessitatibus
+          dolor quaerat. Modi amet consequuntur similique minus cumque qui, a
+          velit perspiciatis atque earum doloribus officia odio. Expedita
+          veritatis nesciunt accusamus tempora, explicabo incidunt
+          exercitationem natus optio, quae ad aperiam eaque repellendus.
+          Quibusdam in molestiae error assumenda perspiciatis quisquam iusto
+          quidem debitis voluptas incidunt omnis fugiat ducimus laboriosam
+          maxime illum cum, quis consequuntur?
+        </p>
+      </template>
+    </MyListItem>
+    <MyListItem
+      >E Commerce
+      <template v-slot:description>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          perspiciatis odio, ipsum numquam eligendi ipsa velit debitis eum
+          libero? Quis, in, distinctio sunt neque ab repellendus mollitia nobis
+          laborum, perspiciatis reiciendis nisi a modi. Ex unde quia blanditiis
+          expedita nisi cum repellat, possimus modi, magnam animi necessitatibus
+          dolor quaerat. Modi amet consequuntur similique minus cumque qui, a
+          velit perspiciatis atque earum doloribus officia odio. Expedita
+          veritatis nesciunt accusamus tempora, explicabo incidunt
+          exercitationem natus optio, quae ad aperiam eaque repellendus.
+          Quibusdam in molestiae error assumenda perspiciatis quisquam iusto
+          quidem debitis voluptas incidunt omnis fugiat ducimus laboriosam
+          maxime illum cum, quis consequuntur?
+        </p>
+      </template>
+    </MyListItem>
+    <MyListItem
+      >Web app
+      <template v-slot:description>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          perspiciatis odio, ipsum numquam eligendi ipsa velit debitis eum
+          libero? Quis, in, distinctio sunt neque ab repellendus mollitia nobis
+          laborum, perspiciatis reiciendis nisi a modi. Ex unde quia blanditiis
+          expedita nisi cum repellat, possimus modi, magnam animi necessitatibus
+          dolor quaerat. Modi amet consequuntur similique minus cumque qui, a
+          velit perspiciatis atque earum doloribus officia odio. Expedita
+          veritatis nesciunt accusamus tempora, explicabo incidunt
+          exercitationem natus optio, quae ad aperiam eaque repellendus.
+          Quibusdam in molestiae error assumenda perspiciatis quisquam iusto
+          quidem debitis voluptas incidunt omnis fugiat ducimus laboriosam
+          maxime illum cum, quis consequuntur?
+        </p>
+      </template>
+    </MyListItem>
+    <MyListItem
+      >Mobile app
+      <template v-slot:description>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          perspiciatis odio, ipsum numquam eligendi ipsa velit debitis eum
+          libero? Quis, in, distinctio sunt neque ab repellendus mollitia nobis
+          laborum, perspiciatis reiciendis nisi a modi. Ex unde quia blanditiis
+          expedita nisi cum repellat, possimus modi, magnam animi necessitatibus
+          dolor quaerat. Modi amet consequuntur similique minus cumque qui, a
+          velit perspiciatis atque earum doloribus officia odio. Expedita
+          veritatis nesciunt accusamus tempora, explicabo incidunt
+          exercitationem natus optio, quae ad aperiam eaque repellendus.
+          Quibusdam in molestiae error assumenda perspiciatis quisquam iusto
+          quidem debitis voluptas incidunt omnis fugiat ducimus laboriosam
+          maxime illum cum, quis consequuntur?
+        </p>
+      </template>
+    </MyListItem>
+    <MyListItem
+      >Maintenance
+      <template v-slot:description>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          perspiciatis odio, ipsum numquam eligendi ipsa velit debitis eum
+          libero? Quis, in, distinctio sunt neque ab repellendus mollitia nobis
+          laborum, perspiciatis reiciendis nisi a modi. Ex unde quia blanditiis
+          expedita nisi cum repellat, possimus modi, magnam animi necessitatibus
+          dolor quaerat. Modi amet consequuntur similique minus cumque qui, a
+          velit perspiciatis atque earum doloribus officia odio. Expedita
+          veritatis nesciunt accusamus tempora, explicabo incidunt
+          exercitationem natus optio, quae ad aperiam eaque repellendus.
+          Quibusdam in molestiae error assumenda perspiciatis quisquam iusto
+          quidem debitis voluptas incidunt omnis fugiat ducimus laboriosam
+          maxime illum cum, quis consequuntur?
+        </p>
+      </template>
+    </MyListItem>
+  </MyList>
 
   <h3>1. Développement Web</h3>
 
