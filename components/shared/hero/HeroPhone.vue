@@ -18,7 +18,8 @@
       <span></span>
       <span></span>
     </span>
-    <div>
+    <div class="phone__text">
+      <MyGridBg :gradient="true" />
       <h1>Développeur <br />Fullstack</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, ipsum!
@@ -136,7 +137,6 @@
     right: rem(20);
     width: rem(32);
     height: rem(32);
-    // background: red;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -144,7 +144,7 @@
       display: block;
       width: 100%;
       height: 4px;
-      background: #2e1f1f;
+      background: #f8bcbc;
       border-radius: 20px;
     }
   }
@@ -229,9 +229,17 @@
   }
   p {
     margin-inline: rem(30);
-    color: #a3667a;
+    color: #d692a9;
     font-size: rem(20);
     font-weight: 500;
+  }
+
+  &__text {
+    overflow: hidden;
+    height: 45%;
+    border-bottom-left-radius: rem(45);
+    border-bottom-right-radius: rem(45);
+    position: relative;
   }
 }
 
