@@ -37,7 +37,7 @@ onMounted(() => {
 <template>
   <MySection
     className="images"
-    id="03"
+    id="02"
     sectionName="Photos"
     backgroundColor="rgb(218, 169, 129)"
     textColor="#000"

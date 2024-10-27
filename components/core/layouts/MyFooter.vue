@@ -6,18 +6,50 @@ defineProps({
 
 <template>
   <footer class="footer">
-    <h2 class="footer__header">
-      <span>{{ id }}/ </span>&nbsp;Footer
-    </h2>
-    <div class="footer__content">
-      <div class="footer__logo">
-        <img src="/img/logoblack.png" alt="" />
+    <MySection
+      :id
+      sectionName="Une envie ? "
+      backgroundColor="#fedcdb"
+      textColor="#000"
+      class="footer__envie"
+    >
+      <div class="video">
+        <video
+          src="/video/background.mp4"
+          muted
+          playsinline
+          autoplay
+          loop
+        ></video>
       </div>
-      <div class="footer__links">
-        <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/projets">Projets</NuxtLink>
-        <NuxtLink to="/">Contact</NuxtLink>
-        <NuxtLink to="/mentions-legales">mentions légales</NuxtLink>
+
+      <div class="content">
+        <p>
+          Vous avez un projet en tête ? Vous souhaitez en discuter ? N'hésitez
+          pas à me contacter pour en discuter.
+        </p>
+        <MyBtn class="btn" variant="third" color="black" href="/contact"
+          >Me contacter</MyBtn
+        >
+      </div>
+    </MySection>
+    <MySection
+      :id="`0${Number(id) + 1}`"
+      sectionName="Footer"
+      backgroundColor="#b9a5e2"
+      textColor="#000"
+      class="footer__footer"
+    >
+      <div class="footer__content">
+        <div class="footer__logo">
+          <img src="/img/logoblack.png" alt="" />
+        </div>
+        <div class="footer__links">
+          <NuxtLink to="/">Home</NuxtLink>
+          <NuxtLink to="/projets">Projets</NuxtLink>
+          <NuxtLink to="/">Contact</NuxtLink>
+          <NuxtLink to="/mentions-legales">mentions légales</NuxtLink>
+        </div>
       </div>
       <div class="footer__socials">
         <NuxtLink
@@ -37,7 +69,7 @@ defineProps({
               clip-rule="evenodd"
               d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"
               transform="scale(64)"
-              fill="#1a6d2f"
+              fill="#f15a52"
             />
           </svg>
         </NuxtLink>
@@ -47,7 +79,7 @@ defineProps({
           target="_blank"
         >
           <svg
-            fill="#1a6d2f"
+            fill="#f15a52"
             width="800px"
             height="800px"
             viewBox="0 0 19.2 19.2"
@@ -76,7 +108,7 @@ defineProps({
           >
             <g>
               <path
-                style="fill: #1a6d2f"
+                style="fill: #f15a52"
                 d="M145.659,0c80.45,0,145.66,65.219,145.66,145.66s-65.21,145.659-145.66,145.659S0,226.1,0,145.66
 		S65.21,0,145.659,0z"
               />
@@ -91,44 +123,76 @@ defineProps({
           </svg>
         </NuxtLink>
       </div>
-    </div>
-    <div class="footer__footer">
-      <NuxtLink>Mentions légales</NuxtLink>
-      <p>© 2024 Quentin Heinis</p>
-    </div>
+      <div class="footer__bottom">
+        <NuxtLink>Mentions légales</NuxtLink>
+        <p>© 2024 Quentin Heinis</p>
+      </div>
+    </MySection>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footer {
-  color: rgb(241, 241, 241);
-  background: rgb(61, 28, 44);
-  border-top-left-radius: rem(20);
-  border-top-right-radius: rem(20);
-  z-index: 1;
-  position: relative;
-  margin-top: rem(-40);
-
-  &__header {
-    padding-inline: rem(80);
-    font-size: rem(16);
-    font-weight: 400;
-    height: rem(68);
+  @include medium-up {
     display: flex;
-    align-items: center;
-    border-bottom: 2px solid rgb(255, 255, 255);
-    span {
-      font-weight: 600;
+  }
+  &__footer {
+    @include medium-up {
+      width: 50%;
     }
   }
+  &__envie {
+    overflow: hidden;
+    @include medium-up {
+      width: 50%;
+    }
+    .video {
+      position: absolute;
+      top: rem(68);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      video {
+        width: 100%;
+        height: 100%;
+        filter: hue-rotate(100deg);
+        mix-blend-mode: screen;
+        object-fit: cover;
+      }
+    }
+    .content {
+      position: relative;
+      padding-top: rem(20);
+      z-index: 1;
+      p {
+        max-width: rem(500);
+        font-weight: 900;
+      }
+    }
+    .btn {
+      margin-top: rem(30);
+      font-weight: 900;
+      max-width: fit-content;
+      color: #000;
+      &:hover {
+        color: #fff;
+        border-color: #ff9633;
+        border-width: 2px;
+        transition: all 0.1s ease;
+      }
+    }
+  }
+
   &__content {
-    padding-inline: rem(40);
-    padding-top: rem(40);
     display: flex;
-    align-items: center;
     gap: rem(20);
+    height: 100%;
   }
   &__logo {
+    margin-top: rem(16);
     height: rem(64);
     width: rem(64);
     img {
@@ -137,8 +201,10 @@ defineProps({
       object-fit: contain;
     }
   }
-  &__footer {
-    padding: rem(20) rem(40);
+  &__bottom {
+    position: absolute;
+    bottom: rem(20);
+    right: rem(20);
     display: flex;
     font-size: rem(12);
     gap: rem(8);
@@ -152,15 +218,19 @@ defineProps({
     }
   }
   &__socials {
+    position: absolute;
+    right: rem(20);
+    top: rem(108);
     display: flex;
+    flex-direction: column;
     gap: rem(8);
     a {
       svg {
-        width: rem(48);
+        width: rem(36);
         height: auto;
         background: white;
         border-radius: 50%;
-        outline: #1a6d2f 2px solid;
+        outline: #f15a52 2px solid;
         outline-offset: -1px;
       }
     }

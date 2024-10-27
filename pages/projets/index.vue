@@ -1,6 +1,6 @@
 <script setup>
 const footerId = useState("footerId");
-footerId.value = "04";
+footerId.value = "02";
 
 const { client } = usePrismic();
 
@@ -39,7 +39,6 @@ useSeoMeta({
     <h1>Découvrez mes projets</h1>
   </section>
   <ProjectList :projects="projects" />
-  <ProjectFooter id="03" />
 </template>
 
 <style lang="scss" scoped>

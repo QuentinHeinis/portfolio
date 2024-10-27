@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <MySection id="04" sectionName="Voir plus de projets">
+  <MySection id="03" sectionName="Voir plus de projets">
     <div class="project-nav">
       <NuxtLink :to="`/projets/${prev?.uid}`" class="project-nav__card" @mouseenter="emitHovered"
       @mouseleave="emitLeaveHovered">

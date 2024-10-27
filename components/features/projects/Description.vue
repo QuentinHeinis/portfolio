@@ -73,7 +73,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <MySection className="project-description" id="02" sectionName="Description">
+  <MySection className="project-description" id="01" sectionName="Description">
     <aside>
       <div>
         <h3 v-if="clientName">Client</h3>

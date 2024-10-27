@@ -43,7 +43,7 @@ onMounted(() => {
 
 <template>
   <MySection
-    id="02"
+    id="01"
     sectionName="Mon portfolio"
     class="projects"
     class-name="projects__content -nopt"

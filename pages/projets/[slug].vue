@@ -1,6 +1,6 @@
 <script setup>
 const footerId = useState("footerId");
-footerId.value = "06";
+footerId.value = "04";
 
 const { client } = usePrismic();
 const route = useRoute();
@@ -61,7 +61,6 @@ useSeoMeta({
   <Description :date :clientName :stacks :description />
   <Images :imgs />
   <ProjectNav :next :prev />
-  <ProjectFooter />
 </template>
 
 <style lang="scss" scoped></style>
