@@ -9,7 +9,7 @@ defineProps({
     <MySection
       :id
       sectionName="Une envie ? "
-      backgroundColor="#fedcdb"
+      backgroundColor="#eec3c1"
       textColor="#000"
       class="footer__envie"
     >

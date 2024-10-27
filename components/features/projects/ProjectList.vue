@@ -45,6 +45,7 @@ onMounted(() => {
   <MySection
     id="01"
     sectionName="Mon portfolio"
+    background-color="#212137"
     class="projects"
     class-name="projects__content -nopt"
   >

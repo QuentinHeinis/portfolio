@@ -123,7 +123,7 @@ onBeforeMount(() => {
     }
   }
   &__nav {
-    background: rgb(218, 123, 241);
+    background: #c998d5;
     height: 100%;
     width: 100%;
     translate: 100%;

@@ -22,7 +22,7 @@ defineProps({
   text-decoration: none;
   &:hover {
     padding-left: rem(20);
-    color: rgb(94, 224, 233);
+    color: #962bd2;
   }
   span {
     font-size: rem(24);

@@ -19,7 +19,7 @@ footerId.value = "04";
   <MySection
     id="02"
     section-name="Mes prestations"
-    background-color="#dfecdc"
+    background-color="#e3d7c0"
     text-color="#000"
     class="section"
   >
@@ -29,7 +29,7 @@ footerId.value = "04";
     id="03"
     section-name="A propos"
     class="section"
-    background-color="#e3ffde"
+    background-color="#c5e1c0"
     text-color="#000"
   >
     <HomeAbout />
