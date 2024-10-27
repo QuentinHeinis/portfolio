@@ -1,37 +1,36 @@
 <script setup>
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const images = [
-  {
-    src: "",
-    alt: "",
-  },
-];
+const props = defineProps({
+  imgs: Array,
+});
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  gsap.utils
-    .toArray(".section-parallax .parallax-content")
-    .forEach((section, i) => {
-      const heightDiff =
-        section.offsetHeight - section.parentElement.offsetHeight;
+  let mm = gsap.matchMedia();
+  mm.add("screen and (min-width: 768px)", () => {
+    gsap.utils
+      .toArray(".section-parallax .parallax-content")
+      .forEach((section, i) => {
+        const heightDiff =
+          section.offsetHeight - section.parentElement.offsetHeight;
 
-      gsap.fromTo(
-        section,
-        {
-          y: -heightDiff,
-        },
-        {
-          scrollTrigger: {
-            trigger: section.parentElement,
-            scrub: true,
+        gsap.fromTo(
+          section,
+          {
+            y: -heightDiff,
           },
-          y: 0,
-          ease: "none",
-        }
-      );
-    });
+          {
+            scrollTrigger: {
+              trigger: section.parentElement,
+              scrub: true,
+            },
+            y: 0,
+            ease: "none",
+          }
+        );
+      });
+  });
 });
 </script>
 
@@ -39,23 +38,13 @@ onMounted(() => {
   <MySection
     className="images"
     id="03"
-    sectionName="Description"
+    sectionName="Photos"
     backgroundColor="rgb(218, 169, 129)"
     textColor="#000"
   >
-    <div class="section-parallax">
+    <div class="section-parallax" v-for="(img, index) in imgs" :key="index">
       <div class="parallax-content">
-        <img src="/img/projectsTemplate/image1.jpg" alt="" />
-      </div>
-    </div>
-    <div class="section-parallax">
-      <div class="parallax-content">
-        <img src="/img/projectsTemplate/image2.jpg" alt="" />
-      </div>
-    </div>
-    <div class="section-parallax">
-      <div class="parallax-content">
-        <img src="/img/projectsTemplate/image3.jpg" alt="" />
+        <img :src="img.project_image.url" alt="" />
       </div>
     </div>
   </MySection>
@@ -72,8 +61,10 @@ onMounted(() => {
   position: relative;
   width: 100%;
   max-width: rem(1920);
-  height: 80vh;
+  height: 80%;
   overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
 .parallax-content {
@@ -87,7 +78,7 @@ onMounted(() => {
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 </style>

@@ -15,9 +15,9 @@ defineProps({
       </div>
       <div class="footer__links">
         <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/">A propos</NuxtLink>
         <NuxtLink to="/projets">Projets</NuxtLink>
         <NuxtLink to="/">Contact</NuxtLink>
+        <NuxtLink to="/mentions-legales">mentions légales</NuxtLink>
       </div>
       <div class="footer__socials">
         <NuxtLink

@@ -14,17 +14,7 @@ const redrawOnce = ref(true);
 
 const rectangles = reactive([]);
 
-const lines = reactive([
-  { startX: -7, startY: -3, number: 9, isHorizontal: true },
-  { startX: -7, startY: -2, number: 10, isHorizontal: true },
-  { startX: 1, startY: -1, number: 2, isHorizontal: false },
-  { startX: 2, startY: -1, number: 2, isHorizontal: false },
-  { startX: -6, startY: 1, number: 8, isHorizontal: true },
-  { startX: -7, startY: 2, number: 7, isHorizontal: true },
-  { startX: -7, startY: 3, number: 6, isHorizontal: true },
-  { startX: -7, startY: 4, number: 5, isHorizontal: true },
-  { startX: -7, startY: 5, number: 4, isHorizontal: true },
-]);
+let lines = reactive([]);
 
 const drawRectangle = (
   rectX,
@@ -69,9 +59,6 @@ const drawLines = (startX, startY, number, isHorizontal) => {
     rectangles.push({ x, y });
   }
 };
-lines.forEach((line) => {
-  drawLines(line.startX, line.startY, line.number, line.isHorizontal);
-});
 
 const draw = () => {
   ctx.value.clearRect(0, 0, window.innerWidth, window.innerHeight);
@@ -79,12 +66,46 @@ const draw = () => {
   rectangles.forEach((rect) => {
     drawRectangle(rect.x, rect.y);
   });
-  drawRectangle(-162, -100, true, 175, 50);
+  drawRectangle(-162, -175, true, 175, 50);
 };
 
 const resizeCanvas = () => {
   canvas.value.width = window.innerWidth;
   canvas.value.height = window.innerHeight;
+  if (window.innerWidth < 1150) {
+    // canvas.value.width = 1080;
+    lines = reactive([
+      { startX: -4, startY: -4, number: 9, isHorizontal: true },
+      { startX: -4, startY: -3, number: 10, isHorizontal: true },
+      { startX: 4, startY: -2, number: 2, isHorizontal: false },
+      { startX: 5, startY: -2, number: 2, isHorizontal: false },
+      { startX: -3, startY: 0, number: 8, isHorizontal: true },
+      { startX: -4, startY: 1, number: 7, isHorizontal: true },
+      { startX: -4, startY: 2, number: 6, isHorizontal: true },
+      { startX: -4, startY: 3, number: 5, isHorizontal: true },
+      { startX: -4, startY: 4, number: 3, isHorizontal: true },
+    ]);
+    rectangles.length = 0;
+    lines.forEach((line) => {
+      drawLines(line.startX, line.startY, line.number, line.isHorizontal);
+    });
+  } else {
+    lines = reactive([
+      { startX: -7, startY: -4, number: 9, isHorizontal: true },
+      { startX: -7, startY: -3, number: 10, isHorizontal: true },
+      { startX: 1, startY: -2, number: 2, isHorizontal: false },
+      { startX: 2, startY: -2, number: 2, isHorizontal: false },
+      { startX: -6, startY: 0, number: 8, isHorizontal: true },
+      { startX: -7, startY: 1, number: 7, isHorizontal: true },
+      { startX: -7, startY: 2, number: 6, isHorizontal: true },
+      { startX: -7, startY: 3, number: 5, isHorizontal: true },
+      { startX: -7, startY: 4, number: 4, isHorizontal: true },
+    ]);
+    rectangles.length = 0;
+    lines.forEach((line) => {
+      drawLines(line.startX, line.startY, line.number, line.isHorizontal);
+    });
+  }
   draw();
 };
 
@@ -126,7 +147,10 @@ const handleMouseMove = (event) => {
 };
 
 onMounted(() => {
+  if (window.innerWidth < 1080) {
+  }
   ctx.value = canvas.value.getContext("2d");
+
   resizeCanvas(); // Set initial size
 
   window.addEventListener("resize", resizeCanvas);

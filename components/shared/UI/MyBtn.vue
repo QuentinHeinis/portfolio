@@ -2,7 +2,7 @@
 const props = defineProps({
   href: String,
   variant: {
-    type: String as PropType<"primary" | "secondary">,
+    type: String as PropType<"primary" | "secondary" | "third">,
     default: "primary",
   },
   color: {
@@ -15,6 +15,7 @@ const variantClasses = computed(() => {
   return {
     "-primary": props.variant === "primary",
     "-secondary": props.variant === "secondary",
+    "-third": props.variant === "third",
   };
 });
 </script>
@@ -22,11 +23,15 @@ const variantClasses = computed(() => {
 <template>
   <NuxtLink class="c-button" :class="variantClasses" :to="href">
     <slot />
+    <span class="c-button__chevron">
+      <span></span>
+    </span>
   </NuxtLink>
 </template>
 
 <style lang="scss" scoped>
 .c-button {
+  $this: &;
   align-items: center;
   border: 1px solid #fff;
   border-radius: rem(24);
@@ -44,6 +49,44 @@ const variantClasses = computed(() => {
   }
   &.-secondary {
     @include hoverEffect(v-bind(color), "secondary");
+  }
+  &.-third {
+    @include hoverEffect(v-bind(color), "secondary");
+    padding-right: rem(60);
+    #{$this}__chevron {
+      position: absolute;
+      right: rem(10);
+      width: rem(32);
+      height: rem(32);
+      display: grid;
+      place-items: center;
+      background: #000;
+      border-radius: 50%;
+      scale: 0.2;
+      rotate: -45deg;
+      transition: all 0.3s cubic-bezier(0.3, 0.2, 0.2, 1.8);
+      span {
+        transition: all 0.5s ease;
+        display: block;
+        width: rem(12);
+        height: rem(12);
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        rotate: 45deg;
+        translate: 0 -2px;
+      }
+    }
+
+    &:hover {
+      #{$this}__chevron {
+        scale: 1;
+        rotate: -90deg;
+        background: #ff9633;
+        span {
+          border-color: #000;
+        }
+      }
+    }
   }
 }
 </style>

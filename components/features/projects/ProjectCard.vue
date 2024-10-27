@@ -1,12 +1,21 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const props = defineProps({
+  project: Object,
+});
+</script>
 
 <template>
-  <NuxtLink to="/projets/test" class="project-card">
+  <NuxtLink
+    :to="`/projets/${project?.uid}`"
+    class="project-card"
+    @mouseenter="emitHovered"
+    @mouseleave="emitLeaveHovered"
+  >
     <div class="project-card__img">
-      <img src="/img/projectsTemplate/background.jpg" alt="" />
+      <img :src="project?.img" alt="" />
     </div>
     <div class="project-card__text">
-      <h2>Nom du projet</h2>
+      <h2>{{ project?.title }}</h2>
       <p>voir le projet</p>
     </div>
   </NuxtLink>
@@ -30,6 +39,7 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+      filter: brightness(0.5);
     }
   }
   &__text {
@@ -38,7 +48,7 @@
   }
   &:hover {
     img {
-      filter: brightness(0.8);
+      filter: brightness(0.3);
       scale: 1.1;
     }
   }

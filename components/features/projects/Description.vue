@@ -2,6 +2,13 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const props = defineProps({
+  description: String,
+  stacks: String,
+  clientName: String,
+  date: String,
+});
+
 const text = ref();
 const stringSplitter = (myString, chunkSize) => {
   let splitString = [];
@@ -39,21 +46,27 @@ const stringListToHTML = (listString, parent) => {
 
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
+  let mm = gsap.matchMedia();
   gsap.fromTo(".project-description__text p", { opacity: 0 }, { opacity: 1 });
-  for (let paragraph of text.value.children) {
-    stringListToHTML(stringSplitter(paragraph.innerText, 40), paragraph);
-  }
-  gsap.set(".project-description__text p span", { translateY: 50, opacity: 0 });
+  mm.add("screen and (min-width: 768px)", () => {
+    for (let paragraph of text.value.children) {
+      stringListToHTML(stringSplitter(paragraph.innerText, 38), paragraph);
+    }
+    gsap.set(".project-description__text p span", {
+      translateY: 50,
+      opacity: 0,
+    });
 
-  const spans = gsap.utils.toArray(".project-description__text p span");
-  spans.forEach((span) => {
-    gsap.to(span, {
-      translateY: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: span,
-        start: "top bottom-=50px",
-      },
+    const spans = gsap.utils.toArray(".project-description__text p span");
+    spans.forEach((span) => {
+      gsap.to(span, {
+        translateY: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: span,
+          start: "top bottom-=50px",
+        },
+      });
     });
   });
 });
@@ -63,36 +76,21 @@ onMounted(() => {
   <MySection className="project-description" id="02" sectionName="Description">
     <aside>
       <div>
-        <h3>Client</h3>
-        <p>Client name</p>
+        <h3 v-if="clientName">Client</h3>
+        <p>{{ clientName }}</p>
         <h3>Année</h3>
-        <p>2024</p>
+        <p>{{ date }}</p>
       </div>
-      <div>
+      <div v-if="stacks">
         <h3>Stacks</h3>
-        <p>Stacks 1</p>
-        <p>Stacks 2</p>
-        <p>Stacks 3</p>
+        <p v-for="(stack, index) in stacks" :key="index">
+          {{ stack.text }}
+        </p>
       </div>
     </aside>
     <div class="project-description__text" ref="text">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure
-        consequatur debitis dolore facilis dolores! Optio hic magni aperiam
-        aliquid neque mollitia odio quas porro harum, tenetur nesciunt,
-        doloremque laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure
-        consequatur debitis dolore facilis dolores! Optio hic magni aperiam
-        aliquid neque mollitia odio quas porro harum, tenetur nesciunt,
-        doloremque laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure
-        consequatur debitis dolore facilis dolores! Optio hic magni aperiam
-        aliquid neque mollitia odio quas porro harum, tenetur nesciunt,
-        doloremque laborum.
+      <p v-for="(paragraph, index) in description" :key="index">
+        {{ paragraph.text }}
       </p>
     </div>
   </MySection>
@@ -103,6 +101,10 @@ onMounted(() => {
   padding-bottom: rem(120);
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  @media screen and (min-width: 800px) {
+    flex-wrap: nowrap;
+  }
   h3 {
     color: #dccce0;
     font-size: rem(14);
@@ -113,10 +115,12 @@ onMounted(() => {
     gap: rem(50);
     font-size: rem(28);
     p {
-      display: flex;
-      width: 500px;
-      flex-direction: column;
-      opacity: 0;
+      @media screen and (min-width: 800px) {
+        display: flex;
+        width: 500px;
+        flex-direction: column;
+        opacity: 0;
+      }
     }
   }
   aside {

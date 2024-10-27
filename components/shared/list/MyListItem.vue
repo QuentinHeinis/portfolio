@@ -64,6 +64,7 @@ const toggleScrub = () => {
     display: grid;
     grid-template-rows: 0fr;
     transition: 250ms grid-template-rows ease;
+    width: 100%;
     &-content {
       overflow: hidden;
       & > div {

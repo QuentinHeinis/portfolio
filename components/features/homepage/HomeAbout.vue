@@ -3,8 +3,7 @@
 <template>
   <div class="about">
     <div class="about__img">
-      <img src="/img/pasmoi.jpg" alt="" />
-      <p>nan c'est pas encore moi, faut que je fasse une photo :)</p>
+      <img src="/img/me.jpg" alt="" />
     </div>
     <div class="about__txt">
       <p>
@@ -44,12 +43,19 @@
   display: flex;
   justify-content: center;
   gap: rem(30);
+  flex-wrap: wrap;
   &__img {
-    width: 30%;
+    width: 100%;
+    @include small-up {
+      width: 30%;
+    }
   }
   &__txt {
     color: #000;
-    width: 30%;
+    width: 100%;
+    @include small-up {
+      width: 40%;
+    }
     p {
       margin-bottom: rem(16);
     }

@@ -72,7 +72,7 @@ onBeforeMount(() => {
             <MyLink @click="linkClick()" number="01" href="/">Home</MyLink>
           </li>
           <li>
-            <MyLink @click="linkClick()" number="02" href="/">A propos</MyLink>
+            <MyLink @click="linkClick()" number="02" href="/#a-propos">A propos</MyLink>
           </li>
           <li>
             <MyLink @click="linkClick()" number="03" href="/projets"

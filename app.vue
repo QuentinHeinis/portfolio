@@ -10,10 +10,6 @@ nuxtApp.hook("page:finish", () => {
 onMounted(() => {
   const lenis = useState("lenis", () => new Lenis());
 
-  lenis.value.on("scroll", (e) => {
-    // console.log(e);
-  });
-
   function raf(time) {
     lenis.value.raf(time);
     requestAnimationFrame(raf);

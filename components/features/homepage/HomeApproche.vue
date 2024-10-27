@@ -10,8 +10,8 @@
       <div class="approche__text">
         <h3>Approche personnalisée :</h3>
         <p>
-          Je suis à l'écoute de vos besoins et je m'engage à créer une solution
-          qui vous ressemble.
+          Je suis à l'écoute de vos besoins et m'engage à créer une solution qui
+          vous ressemble.
         </p>
       </div>
     </li>
@@ -29,8 +29,8 @@
       <div class="approche__text">
         <h3>Design sur mesure :</h3>
         <p>
-          J'ai la possibilité de concevoir moi-même le design de votre site,
-          afin qu'il reflète parfaitement votre vision.
+          Je conçois le design de votre site pour qu'il reflète parfaitement
+          votre vision.
         </p>
       </div>
     </li>
@@ -46,10 +46,11 @@
         />
       </div>
       <div class="approche__text">
-        <h3>OU Choix de template :</h3>
+        <h3>Choix de template :</h3>
         <p>
-          Vous pouvez également opter pour un template de site que nous
-          personnaliserons ensemble, pour un rendu professionnel et rapide.
+          Vous avez également la possibilité d'opter pour un template que nous
+          personnaliserons ensemble, assurant ainsi un rendu professionnel et
+          rapide.
         </p>
       </div>
     </li>
@@ -62,7 +63,7 @@
         <h3>Votre design, votre choix :</h3>
         <p>
           Si vous avez déjà une idée précise, n'hésitez pas à me proposer votre
-          propre design, je me ferai un plaisir de l'intégrer.
+          propre design ; je me ferai un plaisir de l'intégrer.
         </p>
       </div>
     </li>
@@ -81,7 +82,7 @@
         <h3>Collaboration avec des experts :</h3>
         <p>
           Pour des demandes très spécifiques, je peux faire appel à un freelance
-          expert en webdesign pour garantir un résultat à la hauteur de vos
+          expert en webdesign, garantissant un résultat à la hauteur de vos
           attentes.
         </p>
       </div>

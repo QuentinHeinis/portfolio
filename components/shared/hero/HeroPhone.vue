@@ -105,20 +105,26 @@
 
 <style lang="scss" scoped>
 .phone {
-  position: absolute;
-  z-index: 10;
-  height: 810px;
-  width: 375px;
-
-  top: 50%;
-  translate: 0 -50%;
-  left: 55%;
-  background: rgb(235, 208, 220);
-  outline: 7px solid rgb(20, 20, 20);
-  outline-offset: 5px;
-  border-radius: rem(45);
+  position: relative;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 800px) {
+    position: absolute;
+    z-index: 10;
+    height: 775px;
+    width: 375px;
+    top: 50%;
+    translate: 0 calc(-50%);
+    left: 45%;
+    outline: 7px solid rgb(20, 20, 20);
+    outline-offset: 5px;
+    border-radius: rem(45);
+    background: rgb(235, 208, 220);
+  }
+  @include large-up {
+    left: 55%;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -132,12 +138,13 @@
     display: block;
   }
   &__burger {
+    display: none;
     position: absolute;
     top: rem(20);
     right: rem(20);
     width: rem(32);
     height: rem(32);
-    display: flex;
+
     flex-direction: column;
     gap: 4px;
     span {
@@ -147,16 +154,21 @@
       background: #f8bcbc;
       border-radius: 20px;
     }
+    @media (min-width: 800px) {
+      display: flex;
+    }
   }
   &__img {
-    border-top-left-radius: rem(45);
-    border-top-right-radius: rem(45);
     overflow: hidden;
     height: 55%;
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+    @media (min-width: 800px) {
+      border-top-left-radius: rem(45);
+      border-top-right-radius: rem(45);
     }
   }
 
@@ -192,29 +204,42 @@
     span {
       animation: ChevronWaves 2s alternate infinite linear;
       position: absolute;
-      bottom: rem(20);
+      bottom: rem(90);
       left: rem(20);
       height: rem(15);
       width: rem(15);
       display: block;
+      z-index: 2;
       border-bottom: rem(3) solid #f15a52;
       border-left: rem(3) solid #f15a52;
       border-radius: 2px;
       rotate: -45deg;
+      @media (min-width: 800px) {
+        bottom: rem(20);
+      }
       &:nth-child(1) {
         border-color: #f15a52c5;
         animation-delay: 0.1s;
-        bottom: rem(35);
+        bottom: rem(105);
+        @media (min-width: 800px) {
+          bottom: rem(35);
+        }
       }
       &:nth-child(2) {
         border-color: #f15a52a8;
-        bottom: rem(50);
+        bottom: rem(120);
         animation-delay: 0.2s;
+        @media (min-width: 800px) {
+          bottom: rem(50);
+        }
       }
       &:nth-child(3) {
         animation-delay: 0.3s;
         border-color: #f15a5277;
-        bottom: rem(65);
+        bottom: rem(135);
+        @media (min-width: 800px) {
+          bottom: rem(65);
+        }
       }
     }
   }
@@ -240,6 +265,13 @@
     border-bottom-left-radius: rem(45);
     border-bottom-right-radius: rem(45);
     position: relative;
+    z-index: 1;
+
+    padding-bottom: rem(150);
+
+    @media (min-width: 800px) {
+      padding-bottom: rem(0);
+    }
   }
 }
 

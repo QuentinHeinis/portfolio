@@ -26,6 +26,7 @@ defineProps({
   <section
     class="section"
     :class="{ '-overlapTop': overlapTop, '-isOverlapped': isOverlap }"
+    :id="sectionName?.split(' ').join('-').toLowerCase()"
   >
     <h2 class="section__header">
       <span>{{ id }}/ </span>&nbsp;{{ sectionName }}

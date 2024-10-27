@@ -1,9 +1,19 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const props = defineProps({
+  title: String,
+  description: String,
+  imgUrl: String,
+});
+
+const img = props.imgUrl
+  ? `url(${props.imgUrl})`
+  : `url('/img/projectsTemplate/background.jpg')`;
+</script>
 
 <template>
   <section class="hero">
-    <h1>Project name</h1>
-    <p>Small description</p>
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
   </section>
 </template>
 
@@ -11,7 +21,7 @@
 .hero {
   color: #fff;
   height: 80vh;
-  background-image: url("/img/projectsTemplate/background.jpg");
+  background-image: v-bind(img);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;

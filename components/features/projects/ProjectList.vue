@@ -2,11 +2,14 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 const projectList = ref();
-const projects = [
-  { title: "Projet 1", description: "Description du projet 1" },
-  { title: "Projet 2", description: "Description du projet 2" },
-  { title: "Projet 3", description: "Description du projet 3" },
-];
+
+const { projects } = defineProps({
+  projects: {
+    type: Array,
+    default: () => [],
+  },
+});
+
 gsap.registerPlugin(ScrollTrigger);
 const initHorizontalScroll = () => {
   gsap.to(projectList.value, {
@@ -48,6 +51,7 @@ onMounted(() => {
     <div ref="projectList" class="projects__list">
       <ProjectCard
         v-for="project in projects"
+        :project="project"
         :key="project.title"
         class="projects__item"
       />
