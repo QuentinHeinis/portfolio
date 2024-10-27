@@ -124,7 +124,7 @@ defineProps({
         </NuxtLink>
       </div>
       <div class="footer__bottom">
-        <NuxtLink>Mentions légales</NuxtLink>
+        <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
         <p>© 2024 Quentin Heinis</p>
       </div>
     </MySection>
@@ -208,6 +208,10 @@ defineProps({
     display: flex;
     font-size: rem(12);
     gap: rem(8);
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
   &__links {
     display: flex;
