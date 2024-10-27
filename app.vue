@@ -19,6 +19,11 @@ onMounted(() => {
 });
 </script>
 <template>
+  <Script
+    async
+    defer
+    src="https://static.cdn.prismic.io/prismic.js?new=true&repo=mmi-food"
+  ></Script>
   <div>
     <NuxtLayout />
   </div>
