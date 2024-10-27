@@ -49,6 +49,7 @@ onMounted(() => {
     class="projects"
     class-name="projects__content -nopt"
   >
+    <MyGridBg class="projects__bg"/>
     <div ref="projectList" class="projects__list">
       <ProjectCard
         v-for="project in projects"
@@ -61,6 +62,7 @@ onMounted(() => {
 </template>
 <style>
 .projects__content.-nopt {
+  position: relative;
   height: 100%;
   padding-top: 0;
 }
@@ -76,6 +78,9 @@ onMounted(() => {
     align-items: center;
     height: 100%;
     gap: 10vw;
+  }
+  &__bg{
+    left: 0;
   }
 }
 </style>

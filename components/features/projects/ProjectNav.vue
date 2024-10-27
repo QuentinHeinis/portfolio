@@ -8,6 +8,7 @@ const props = defineProps({
 
 <template>
   <MySection id="03" sectionName="Voir plus de projets">
+    <MyGridBg class="projects__bg"/>
     <div class="project-nav">
       <NuxtLink :to="`/projets/${prev?.uid}`" class="project-nav__card" @mouseenter="emitHovered"
       @mouseleave="emitLeaveHovered">
@@ -34,11 +35,18 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
+  .projects__bg {
+    position: absolute;
+    top: rem(68);
+    left: 0;
+  }
 .project-nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
   gap: rem(120);
+
   &__card {
     text-decoration: none;
     color: inherit;
