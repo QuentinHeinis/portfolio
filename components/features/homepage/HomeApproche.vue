@@ -94,11 +94,12 @@
 .approche {
   list-style: none;
   padding: 0;
-  display: grid;
+  display: flex;
   max-width: $lg;
   margin-inline: auto;
-  grid-template-columns: repeat(auto-fit, minmax(rem(350), 1fr));
   gap: rem(30);
+  flex-wrap: wrap;
+  justify-content: center;
   &__card {
     display: flex;
     flex-direction: column;
@@ -107,11 +108,7 @@
     position: relative;
     overflow: hidden;
     counter-increment: list-count 1;
-    &:nth-last-child(1) {
-      max-width: rem(500);
-      margin-inline: auto;
-      grid-column: 1 / -1;
-    }
+    max-width: rem(450);
     &::after {
       content: counter(list-count, decimal-leading-zero);
       position: absolute;
