@@ -43,6 +43,6 @@ section {
 
 .hero {
   position: relative;
-  min-height: fit-content;
+  min-height: 100vh;
 }
 </style>
