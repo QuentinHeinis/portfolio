@@ -48,12 +48,6 @@ onBeforeMount(() => {
     "<+.2"
   );
   tl.fromTo(".menu__img", { translateX: "200%" }, { translateX: 0 }, "<");
-  tl.fromTo(
-    ".menu__logo",
-    { rotate: 0 },
-    { rotate: 2160, duration: 1.5 },
-    "=-1.2"
-  );
 });
 </script>
 
@@ -84,7 +78,6 @@ onBeforeMount(() => {
           </li>
         </ul>
       </nav>
-      <img src="/img/logoblack.png" alt="" class="menu__logo" />
       <div class="menu__footer">
         <ul>
           <li>
@@ -172,12 +165,6 @@ onBeforeMount(() => {
   &__title {
     translate: 45%;
     rotate: -90deg;
-  }
-  &__logo {
-    position: absolute;
-    bottom: rem(20);
-    left: rem(20);
-    height: rem(40);
   }
   &__footer {
     position: absolute;

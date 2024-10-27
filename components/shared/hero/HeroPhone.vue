@@ -121,22 +121,23 @@
     outline-offset: 5px;
     border-radius: rem(45);
     background: rgb(235, 208, 220);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: calc(100% + 13px);
+      background: rgb(20, 20, 20);
+      border-bottom-right-radius: rem(4);
+      border-top-right-radius: rem(4);
+      width: rem(5);
+      height: rem(100);
+      display: block;
+    }
   }
   @include large-up {
     left: 55%;
   }
-  &::after {
-    content: "";
-    position: absolute;
-    top: 30%;
-    left: calc(100% + 13px);
-    background: rgb(20, 20, 20);
-    border-bottom-right-radius: rem(4);
-    border-top-right-radius: rem(4);
-    width: rem(5);
-    height: rem(100);
-    display: block;
-  }
+
   &__burger {
     display: none;
     position: absolute;
