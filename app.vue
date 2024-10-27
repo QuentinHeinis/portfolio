@@ -16,6 +16,10 @@ onMounted(() => {
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
+
+  console.clear();
+
+  console.log("made with ❤️ by Quentin Heinis");
 });
 
 useHead({
