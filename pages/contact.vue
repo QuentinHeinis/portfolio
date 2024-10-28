@@ -123,7 +123,7 @@ useSeoMeta({
   </MySection>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .hero {
   height: 60vh;
   background-image: url("/img/projectsTemplate/background.jpg");
