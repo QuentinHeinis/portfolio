@@ -21,12 +21,18 @@ const variantClasses = computed(() => {
 </script>
 
 <template>
-  <NuxtLink class="c-button" :class="variantClasses" :to="href">
+  <NuxtLink class="c-button" :class="variantClasses" :to="href" v-if="href">
     <slot />
     <span class="c-button__chevron">
       <span></span>
     </span>
   </NuxtLink>
+  <button class="c-button" :class="variantClasses" v-else>
+    <slot />
+    <span class="c-button__chevron">
+      <span></span>
+    </span>
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -43,7 +49,7 @@ const variantClasses = computed(() => {
   padding: rem(10) rem(20);
   position: relative;
   text-decoration: none;
-
+  background: transparent;
   &.-primary {
     @include hoverEffect(v-bind(color), "default");
   }
@@ -77,7 +83,8 @@ const variantClasses = computed(() => {
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       #{$this}__chevron {
         scale: 1;
         rotate: -90deg;

@@ -34,10 +34,8 @@
   }
 }
 
-@mixin hoverEffect($color, $variant : 'default') {
-
-
-  @if $variant == 'default' {
+@mixin hoverEffect($color, $variant: "default") {
+  @if $variant == "default" {
     overflow: hidden;
     &::after {
       content: "";
@@ -51,12 +49,16 @@
       transition: translate 0.2s ease;
       z-index: -1;
     }
-    &:hover::after {
+    &:focus {
+      outline: none;
+    }
+    &:hover::after,
+    &:focus::after {
       translate: 0;
     }
   }
 
-  @if $variant == 'secondary' {
+  @if $variant == "secondary" {
     border: 1px solid $color;
     position: relative;
     overflow: hidden;
@@ -67,13 +69,16 @@
       width: 0;
       height: 100%;
       position: absolute;
-      translate:  -50% 0;
+      translate: -50% 0;
       transition: width 0.2s ease;
       z-index: -1;
       left: 50%;
-
     }
-    &:hover::after {
+    &:focus {
+      outline: none;
+    }
+    &:hover::after,
+    &:focus::after {
       width: 120%;
     }
   }

@@ -4,7 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: ["@/scss/main.scss"],
-
+  runtimeConfig: {
+    mail: process.env.NUXT_MAIL,
+    psw: process.env.NUXT_PSW,
+  },
   components: [
     {
       path: "~/components",
@@ -25,7 +28,7 @@ export default defineNuxtConfig({
   },
   prismic: {
     endpoint: process.env.NUXT_PRISMIC_ENDPOINT,
-    preview: '/preview',
+    preview: "/preview",
   },
   build: {
     transpile: ["gsap"],

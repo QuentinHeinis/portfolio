@@ -177,7 +177,7 @@ defineProps({
       font-weight: 900;
       max-width: fit-content;
       color: #000;
-      &:hover {
+      &:hover, &:focus {
         color: #fff;
         border-color: #ff9633;
         border-width: 2px;
