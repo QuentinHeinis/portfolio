@@ -16,7 +16,7 @@ const toggleMenu = () => {
     </div>
     <MyNav :isOpen :linkClick="() => toggleMenu()" />
     <div class="header__btn">
-      <MyBtn @click="isOpen ? toggleMenu() : null" href="/">Me contacter</MyBtn>
+      <MyBtn @click="isOpen ? toggleMenu() : null" href="/contact">Me contacter</MyBtn>
       <Hamburger :isOpen @click="toggleMenu()" />
     </div>
   </header>
