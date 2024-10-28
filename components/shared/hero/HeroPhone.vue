@@ -22,9 +22,9 @@
       <MyGridBg :gradient="true" />
       <h1>Développeur <br />Fullstack</h1>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, ipsum!
+        Jeune développeur passionné de développement depuis 2019.
       </p>
-      <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <p>Basé en Franche-Comté ainsi qu'en Alsace.</p>
     </div>
     <div class="phone__chevron">
       <span></span>
