@@ -3,7 +3,7 @@
 <template>
   <div class="phone">
     <div class="phone__img">
-      <NuxtImg src="/img/phoneBG.jpg" alt="" />
+      <NuxtImg src="/img/phoneBG.jpg" alt="image de fond" />
     </div>
     <span class="phone__name">
       <span>H</span>
@@ -106,10 +106,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-
+  min-height: 100vh;
   @media screen and (min-width: 800px) {
     position: absolute;
     z-index: 10;
+    min-height: unset;
     height: 775px;
     width: 375px;
     top: 50%;
@@ -159,13 +160,15 @@
   }
   &__img {
     overflow: hidden;
-    height: 55%;
+    height: 55vh;
+    display: block;
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
     @media (min-width: 800px) {
+      height: 55%;
       border-top-left-radius: rem(45);
       border-top-right-radius: rem(45);
     }
@@ -260,15 +263,16 @@
 
   &__text {
     overflow: hidden;
-    height: 45%;
+    height: 45vh;
     border-bottom-left-radius: rem(45);
     border-bottom-right-radius: rem(45);
     position: relative;
     z-index: 1;
-
+    
     padding-bottom: rem(150);
-
+    
     @media (min-width: 800px) {
+      height: 45%;
       padding-bottom: rem(0);
     }
   }
