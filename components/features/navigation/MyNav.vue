@@ -111,7 +111,6 @@ onBeforeMount(() => {
   &__img {
     width: 50%;
     height: 100%;
-    background: red;
     position: absolute;
     left: 0;
     z-index: -1;

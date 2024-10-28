@@ -7,7 +7,12 @@ const classList = computed(() => (props.isOpen ? "-open" : ""));
 </script>
 
 <template>
-  <button class="c-button" :class="classList">
+  <button
+    class="c-button"
+    :class="classList"
+    onclick="this.blur()"
+    aria-label="MenuBtn"
+  >
     <span></span>
     <span></span>
     <span></span>
@@ -39,7 +44,7 @@ const classList = computed(() => (props.isOpen ? "-open" : ""));
   }
 
   &.-open {
-    background: rgb(218, 123, 241);
+    background: #c998d5;
     &::after {
       background: transparent;
     }

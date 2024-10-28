@@ -21,13 +21,24 @@ const variantClasses = computed(() => {
 </script>
 
 <template>
-  <NuxtLink class="c-button" :class="variantClasses" :to="href" v-if="href">
+  <NuxtLink
+    class="c-button"
+    :class="variantClasses"
+    :to="href"
+    v-if="href"
+    aria-label="Link"
+  >
     <slot />
     <span class="c-button__chevron">
       <span></span>
     </span>
   </NuxtLink>
-  <button class="c-button" :class="variantClasses" v-else>
+  <button
+    class="c-button"
+    :class="variantClasses"
+    v-else
+    aria-label="ActionBtn"
+  >
     <slot />
     <span class="c-button__chevron">
       <span></span>
