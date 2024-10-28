@@ -13,7 +13,7 @@ const props = defineProps({
     @click="emitLeaveHovered"
   >
     <div class="project-card__img">
-      <img :src="project?.img" alt="" />
+      <NuxtImg :src="project?.img" alt="" />
     </div>
     <div class="project-card__text">
       <h2>{{ project?.title }}</h2>

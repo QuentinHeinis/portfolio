@@ -3,7 +3,7 @@
 <template>
   <div class="phone">
     <div class="phone__img">
-      <img src="/img/phoneBG.jpg" alt="" />
+      <NuxtImg src="/img/phoneBG.jpg" alt="" />
     </div>
     <span class="phone__name">
       <span>H</span>
@@ -21,9 +21,7 @@
     <div class="phone__text">
       <MyGridBg :gradient="true" />
       <h1>Développeur <br />Fullstack</h1>
-      <p>
-        Jeune développeur passionné de développement depuis 2019.
-      </p>
+      <p>Jeune développeur passionné de développement depuis 2019.</p>
       <p>Basé en Franche-Comté ainsi qu'en Alsace.</p>
     </div>
     <div class="phone__chevron">

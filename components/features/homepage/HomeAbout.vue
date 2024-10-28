@@ -3,7 +3,7 @@
 <template>
   <div class="about">
     <div class="about__img">
-      <img src="/img/me.jpg" alt="" />
+      <NuxtImg src="/img/me.jpg" alt="Photo de Quentin Heinis" loading="lazy"/>
     </div>
     <div class="about__txt">
       <p>

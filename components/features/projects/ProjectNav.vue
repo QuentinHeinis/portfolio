@@ -17,7 +17,7 @@ const props = defineProps({
         @click="emitLeaveHovered"
       >
         <div class="project-nav__img">
-          <img :src="prev?.data.project_img.url" alt="" />
+          <NuxtImg :src="prev?.data.project_img.url" alt="" />
         </div>
         <div class="project-nav__text">
           <p>{{ prev?.data.project_name[0].text }}</p>
@@ -32,7 +32,7 @@ const props = defineProps({
         @click="emitLeaveHovered"
       >
         <div class="project-nav__img">
-          <img :src="next?.data.project_img.url" alt="" />
+          <NuxtImg :src="next?.data.project_img.url" alt="" />
         </div>
         <div class="project-nav__text">
           <p>{{ next?.data.project_name[0].text }}</p>

@@ -23,7 +23,7 @@
             </p>
           </div>
           <div class="img">
-            <img src="/graphics/76.png" alt="" />
+            <NuxtImg loading="lazy" src="/graphics/76.png" alt="" />
           </div>
         </div>
       </template>
@@ -41,7 +41,7 @@
             </p>
           </div>
           <div class="img">
-            <img src="/graphics/54.png" alt="" />
+            <NuxtImg loading="lazy" src="/graphics/54.png" alt="" />
           </div>
         </div>
       </template>
@@ -62,7 +62,7 @@
             </p>
           </div>
           <div class="img">
-            <img src="/graphics/11.png" alt="" />
+            <NuxtImg loading="lazy" src="/graphics/11.png" alt="" />
           </div>
         </div>
       </template>
@@ -80,7 +80,7 @@
             </p>
           </div>
           <div class="img">
-            <img src="/graphics/55.png" alt="" />
+            <NuxtImg loading="lazy" src="/graphics/55.png" alt="" />
           </div>
         </div>
       </template>
@@ -99,13 +99,13 @@
             </p>
             <p class="mt-4">
               Je propose également des sessions de formation pour vous aider à
-              prendre en main votre site ou application. Vous apprendrez à
-              gérer votre contenu, à effectuer des mises à jour et à optimiser
-              votre présence en ligne.
+              prendre en main votre site ou application. Vous apprendrez à gérer
+              votre contenu, à effectuer des mises à jour et à optimiser votre
+              présence en ligne.
             </p>
           </div>
           <div class="img">
-            <img src="/graphics/49.png" alt="" />
+            <NuxtImg loading="lazy" src="/graphics/49.png" alt="" />
           </div>
         </div>
       </template>

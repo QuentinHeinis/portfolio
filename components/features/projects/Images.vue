@@ -44,7 +44,7 @@ onMounted(() => {
   >
     <div class="section-parallax" v-for="(img, index) in imgs" :key="index">
       <div class="parallax-content">
-        <img :src="img.project_image.url" alt="" />
+        <NuxtImg :src="img.project_image.url" alt="" />
       </div>
     </div>
   </MySection>

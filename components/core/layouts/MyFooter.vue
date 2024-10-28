@@ -42,7 +42,7 @@ defineProps({
     >
       <div class="footer__content">
         <div class="footer__logo">
-          <img src="/img/logoblack.png" alt="" />
+          <NuxtImg src="/img/logoblack.png" alt="Logo du site" loading="lazy"/>
         </div>
         <div class="footer__links">
           <NuxtLink to="/">Home</NuxtLink>
