@@ -26,7 +26,7 @@ const props = defineProps({
           <img :src="next?.data.project_img.url" alt="" />
         </div>
         <div class="project-nav__text">
-          <p><p>{{ next?.data.project_name[0].text }}</p></p>
+          <p>{{ next?.data.project_name[0].text }}</p>
           <p>Voir le projet</p>
         </div>
       </NuxtLink>
