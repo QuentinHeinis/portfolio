@@ -3,15 +3,19 @@ const props = defineProps({
   prev: Object,
   next: Object,
 });
-
 </script>
 
 <template>
   <MySection id="03" sectionName="Voir plus de projets">
-    <MyGridBg class="projects__bg"/>
+    <MyGridBg class="projects__bg" />
     <div class="project-nav">
-      <NuxtLink :to="`/projets/${prev?.uid}`" class="project-nav__card" @mouseenter="emitHovered"
-      @mouseleave="emitLeaveHovered">
+      <NuxtLink
+        :to="`/projets/${prev?.uid}`"
+        class="project-nav__card"
+        @mouseenter="emitHovered"
+        @mouseleave="emitLeaveHovered"
+        @click="emitLeaveHovered"
+      >
         <div class="project-nav__img">
           <img :src="prev?.data.project_img.url" alt="" />
         </div>
@@ -20,8 +24,13 @@ const props = defineProps({
           <p>Voir le projet</p>
         </div>
       </NuxtLink>
-      <NuxtLink :to="`/projets/${next?.uid}`" class="project-nav__card" @mouseenter="emitHovered"
-      @mouseleave="emitLeaveHovered">
+      <NuxtLink
+        :to="`/projets/${next?.uid}`"
+        class="project-nav__card"
+        @mouseenter="emitHovered"
+        @mouseleave="emitLeaveHovered"
+        @click="emitLeaveHovered"
+      >
         <div class="project-nav__img">
           <img :src="next?.data.project_img.url" alt="" />
         </div>
@@ -35,11 +44,11 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-  .projects__bg {
-    position: absolute;
-    top: rem(68);
-    left: 0;
-  }
+.projects__bg {
+  position: absolute;
+  top: rem(68);
+  left: 0;
+}
 .project-nav {
   display: flex;
   justify-content: center;

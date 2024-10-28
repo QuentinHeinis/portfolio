@@ -10,6 +10,7 @@ const props = defineProps({
     class="project-card"
     @mouseenter="emitHovered"
     @mouseleave="emitLeaveHovered"
+    @click="emitLeaveHovered"
   >
     <div class="project-card__img">
       <img :src="project?.img" alt="" />
