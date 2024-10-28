@@ -47,7 +47,7 @@ defineProps({
         <div class="footer__links">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/projets">Projets</NuxtLink>
-          <NuxtLink to="/">Contact</NuxtLink>
+          <NuxtLink to="/contact">Contact</NuxtLink>
           <NuxtLink to="/mentions-legales">mentions légales</NuxtLink>
         </div>
       </div>
@@ -177,7 +177,8 @@ defineProps({
       font-weight: 900;
       max-width: fit-content;
       color: #000;
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: #fff;
         border-color: #ff9633;
         border-width: 2px;

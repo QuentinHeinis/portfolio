@@ -45,13 +45,13 @@ const btnContent = computed(() =>
 );
 
 useSeoMeta({
-  title: "Quentin Heinis || Contact",
-  ogTitle: "Quentin Heinis || Contact",
+  title: "Quentin Heinis - Contact",
+  ogTitle: "Quentin Heinis - Contact",
   description:
     "Une question ? Un projet ? Utilisez le formulaire de contact ou bien contactez moi via mes réseaux ",
   ogDescription:
     "Une question ? Un projet ? Utilisez le formulaire de contact ou bien contactez moi via mes réseaux ",
-  ogImage: "/favicon.ico",
+  ogImage: "/favicon.png",
 });
 </script>
 

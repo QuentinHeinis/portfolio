@@ -1,4 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useSeoMeta({
+  title: "Quentin Heinis - Mentions légales",
+  ogTitle: "Quentin Heinis - Mentions légales",
+  ogImage: "/favicon.png",
+});
+</script>
 
 <template>
   <section class="container">

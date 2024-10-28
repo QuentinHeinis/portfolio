@@ -1,4 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useSeoMeta({
+  title: "Quentin Heinis - Message envoyé",
+  ogTitle: "Quentin Heinis - Message envoyé",
+  ogImage: "/favicon.png",
+});
+</script>
 
 <template>
   <section class="hero">

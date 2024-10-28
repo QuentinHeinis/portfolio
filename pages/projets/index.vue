@@ -26,10 +26,10 @@ selectedProject.value.forEach((project) => {
 });
 
 useSeoMeta({
-  title: "Quentin Heinis || Portfolio",
-  ogTitle: "Quentin Heinis || Portfolio",
-  description: "Check out my projects",
-  ogDescription: "Check out my projects",
+  title: "Quentin Heinis - Portfolio",
+  ogTitle: "Quentin Heinis - Portfolio",
+  description: "Présentation de mes projets",
+  ogDescription: "Présentation de mes projets",
   ogImage: "/favicon.png",
 });
 </script>

@@ -1,6 +1,16 @@
 <script lang="ts" setup>
 const footerId = useState("footerId");
 footerId.value = "04";
+
+useSeoMeta({
+  title: "Quentin Heinis",
+  ogTitle: "Quentin Heinis",
+  description:
+    " Jeune développeur passionné de développement depuis 2019. Basé en Franche-Comté ainsi qu'en Alsace.",
+  ogDescription:
+    " Jeune développeur passionné de développement depuis 2019. Basé en Franche-Comté ainsi qu'en Alsace.",
+  ogImage: "/favicon.png",
+});
 </script>
 
 <template>

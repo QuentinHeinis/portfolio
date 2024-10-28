@@ -48,8 +48,8 @@ const description = computed(() => {
   return project.value.data.project_desc;
 });
 useSeoMeta({
-  title: "Quentin Heinis || " + project.value.data.project_name[0].text,
-  ogTitle: "Quentin Heinis || " + project.value.data.project_name[0].text,
+  title: "Quentin Heinis - " + project.value.data.project_name[0].text,
+  ogTitle: "Quentin Heinis - " + project.value.data.project_name[0].text,
   description: description.value.slice(0, 155),
   ogDescription: description.value.slice(0, 155),
   ogImage: project.value.data.project_img.url,
