@@ -113,6 +113,8 @@
     min-height: unset;
     height: 775px;
     width: 375px;
+    max-width : calc(80vh/2);
+    max-height : 80vh;
     top: 50%;
     translate: 0 calc(-50%);
     left: 45%;
