@@ -17,20 +17,9 @@ onMounted(() => {
   }
   requestAnimationFrame(raf);
 
-  console.clear();
-
   console.log("made with ❤️ by Quentin Heinis");
 });
 
-useHead({
-  script: [
-    {
-      src: "https://static.cdn.prismic.io/prismic.js?new=true&repo=mmi-food",
-      async: true,
-      defer: true,
-    },
-  ],
-});
 </script>
 <template>
   <div>
