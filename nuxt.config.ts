@@ -35,7 +35,7 @@ export default defineNuxtConfig({
   },
   prismic: {
     endpoint: process.env.NUXT_PRISMIC_ENDPOINT,
-    preview: "/preview",
+    preview: false,
   },
   build: {
     transpile: ["gsap"],
