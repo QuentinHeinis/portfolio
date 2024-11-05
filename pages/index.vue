@@ -15,7 +15,6 @@ useSeoMeta({
 
 <template>
   <section class="hero">
-    <!-- <HomeHero /> -->
     <MyHero />
   </section>
   <MySection
