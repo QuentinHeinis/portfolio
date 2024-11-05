@@ -1,6 +1,9 @@
 <script setup>
 import Lenis from "lenis";
 
+
+const footerId = useState("footerId");
+
 const nuxtApp = useNuxtApp();
 
 nuxtApp.hook("page:finish", () => {
@@ -19,10 +22,14 @@ onMounted(() => {
 
   console.log("made with ❤️ by Quentin Heinis");
 });
-
 </script>
 <template>
   <div>
-    <NuxtLayout />
+    <MyCursor />
+    <MyHeader />
+    <main>
+      <NuxtPage />
+    </main>
+    <MyFooter :id="footerId" />
   </div>
 </template>
