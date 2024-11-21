@@ -22,6 +22,7 @@ useSeoMeta({
     section-name="Mon approche"
     class="section"
     background-color="rgb(29, 17, 22)"
+    overflow="hidden"
   >
     <HomeApproche />
   </MySection>

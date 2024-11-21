@@ -19,6 +19,10 @@ defineProps({
   className: String,
   sectionName: String,
   id: String,
+  overflow: {
+    type: String,
+    default: "visible",
+  },
 });
 </script>
 
@@ -45,6 +49,7 @@ defineProps({
   border-top-right-radius: rem(20);
   z-index: 1;
   position: relative;
+  overflow: v-bind(overflow);
 
   &.-overlapTop {
     margin-top: rem(-40);
@@ -61,6 +66,7 @@ defineProps({
     display: flex;
     align-items: center;
     border-bottom: 2px solid v-bind(textColor);
+    font-family: "Gugi", sans-serif;
     span {
       font-weight: 600;
     }

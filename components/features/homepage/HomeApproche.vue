@@ -1,4 +1,48 @@
-<script lang="ts" setup></script>
+<script setup>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  let items = gsap.utils.toArray(".approche__card");
+
+  items.forEach((item, i) => {
+    let isLast = i + 1 === items.length;
+    let dir = i % 2 ? 1 : -1;
+    let initState = {
+      opacity: 0,
+      x: dir * 250,
+      y: 250,
+    };
+    let endState = {
+      opacity: 1,
+      x: 0,
+      y: 0,
+    };
+    if (isLast) {
+      initState = {
+        opacity: 0,
+        y: 250,
+      };
+      endState = {
+        opacity: 1,
+        y: 0,
+      };
+    }
+    gsap.fromTo(item, initState, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top-=150 bottom",
+        end: "bottom center+=100",
+        scrub: 0.5,
+        once: true,
+      },
+      ...endState,
+    });
+  });
+});
+</script>
 
 <template>
   <ul class="approche">
@@ -100,6 +144,7 @@
   gap: rem(30);
   flex-wrap: wrap;
   justify-content: center;
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -124,6 +169,7 @@
       margin-bottom: rem(20);
       font-weight: 900;
       text-transform: uppercase;
+      font-family: "Gugi", sans-serif;
     }
   }
   &__video {

@@ -1,8 +1,32 @@
-<script lang="ts" setup></script>
+<script setup>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  let items = gsap.utils.toArray(".list-item");
+
+  items.forEach((item, i) => {
+    gsap.fromTo(
+      item,
+      {
+        y: 200,
+      },
+      {
+        scrollTrigger: {
+          trigger: item,
+        },
+        y: 0,
+      }
+    );
+  });
+});
+</script>
 
 <template>
   <MyList>
-    <MyListItem
+    <MyListItem class="list-item"
       >Site vitrine
 
       <template #description>
@@ -23,12 +47,12 @@
             </p>
           </div>
           <div class="img">
-            <NuxtImg loading="lazy" src="/graphics/76.png" alt="" />
+            <NuxtImg src="/graphics/76.png" alt="" />
           </div>
         </div>
       </template>
     </MyListItem>
-    <MyListItem
+    <MyListItem class="list-item"
       >E-Commerce
       <template v-slot:description>
         <div class="desc">
@@ -41,12 +65,12 @@
             </p>
           </div>
           <div class="img">
-            <NuxtImg loading="lazy" src="/graphics/54.png" alt="" />
+            <NuxtImg src="/graphics/54.png" alt="" />
           </div>
         </div>
       </template>
     </MyListItem>
-    <MyListItem
+    <MyListItem class="list-item"
       >Web app
       <template v-slot:description>
         <div class="desc">
@@ -62,12 +86,12 @@
             </p>
           </div>
           <div class="img">
-            <NuxtImg loading="lazy" src="/graphics/11.png" alt="" />
+            <NuxtImg src="/graphics/11.png" alt="" />
           </div>
         </div>
       </template>
     </MyListItem>
-    <MyListItem
+    <MyListItem class="list-item"
       >Applications mobiles
       <template v-slot:description>
         <div class="desc">
@@ -80,12 +104,12 @@
             </p>
           </div>
           <div class="img">
-            <NuxtImg loading="lazy" src="/graphics/55.png" alt="" />
+            <NuxtImg src="/graphics/55.png" alt="" />
           </div>
         </div>
       </template>
     </MyListItem>
-    <MyListItem
+    <MyListItem class="list-item"
       >Maintenance et formation
       <template v-slot:description>
         <div class="desc">
@@ -105,7 +129,7 @@
             </p>
           </div>
           <div class="img">
-            <NuxtImg loading="lazy" src="/graphics/49.png" alt="" />
+            <NuxtImg src="/graphics/49.png" alt="" />
           </div>
         </div>
       </template>

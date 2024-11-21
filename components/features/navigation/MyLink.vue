@@ -20,6 +20,7 @@ defineProps({
   display: flex;
   color: inherit;
   text-decoration: none;
+  font-family: "Gugi", sans-serif;
   &:hover {
     padding-left: rem(20);
     color: #962bd2;

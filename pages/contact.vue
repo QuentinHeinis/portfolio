@@ -135,11 +135,19 @@ useSeoMeta({
   flex-direction: column;
   justify-content: center;
   padding-left: 10%;
+  h1,
+  p b {
+    font-family: "Gugi", sans-serif;
+  }
+  h1 {
+    font-size: rem(32);
+  }
 }
 .contact {
   form {
     max-width: $md;
     margin-inline: auto;
+    font-family: "Gugi", sans-serif;
     label {
       display: flex;
       flex-direction: column;
@@ -154,6 +162,7 @@ useSeoMeta({
       border-radius: 40px;
       padding-inline: 20px;
       transition: all 0.3s ease;
+      font-family: Arial, Helvetica, sans-serif;
       &:focus {
         outline: none;
         border: #ff9633 2px solid;
@@ -165,7 +174,7 @@ useSeoMeta({
       max-height: 500px;
       resize: vertical;
       margin-bottom: 20px;
-
+      font-family: Arial, Helvetica, sans-serif;
       border: #000 1px solid;
       background: transparent;
       color: #fff;

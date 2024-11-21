@@ -1,6 +1,32 @@
 <script lang="ts" setup>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 defineProps({
   id: String,
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  let items = gsap.utils.toArray<HTMLElement>("footer section");
+
+  items.forEach((item, i) => {
+    let dir = i % 2 ? 1 : -1;
+    gsap.fromTo(
+      item,
+      {
+        x: dir * 200,
+        y: 50,
+      },
+      {
+        scrollTrigger: {
+          trigger: item,
+        },
+        x: 0,
+        y: 0,
+      }
+    );
+  });
 });
 </script>
 
@@ -8,7 +34,7 @@ defineProps({
   <footer class="footer">
     <MySection
       :id
-      sectionName="Une envie ? "
+      sectionName="Une envie ?"
       backgroundColor="#eec3c1"
       textColor="#000"
       class="footer__envie"

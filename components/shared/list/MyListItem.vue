@@ -59,6 +59,7 @@ const toggleScrub = () => {
     align-items: center;
     cursor: pointer;
     user-select: none;
+    font-family: "Gugi", sans-serif;
   }
   &__desc {
     display: grid;

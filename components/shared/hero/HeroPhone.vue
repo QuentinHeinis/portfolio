@@ -1,4 +1,18 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import gsap from "gsap";
+
+onMounted(() => {
+  let mm = gsap.matchMedia();
+  mm.add("screen and (min-width: 800px)", () => {
+    gsap.from(".phone", {
+      x: 500,
+      rotate: 45,
+      ease: "elastic.out(.7,0.4)",
+      duration: 1.2
+    });
+  });
+});
+</script>
 
 <template>
   <div class="phone">
@@ -109,8 +123,8 @@
     min-height: unset;
     height: 775px;
     width: 375px;
-    max-width : calc(80vh/2);
-    max-height : 80vh;
+    max-width: calc(80vh / 2);
+    max-height: 80vh;
     top: 50%;
     translate: 0 calc(-50%);
     left: 45%;
@@ -183,6 +197,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Gugi", sans-serif;
   }
   &__socials {
     display: flex;
@@ -251,6 +266,7 @@
     margin-bottom: rem(20);
     margin-left: rem(30);
     font-weight: 900;
+    font-family: "Gugi", sans-serif;
   }
   p {
     margin-inline: rem(30);
@@ -266,9 +282,9 @@
     border-bottom-right-radius: rem(45);
     position: relative;
     z-index: 1;
-    
+
     padding-bottom: rem(150);
-    
+
     @media (min-width: 800px) {
       height: 45%;
       padding-bottom: rem(0);

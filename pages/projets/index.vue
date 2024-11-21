@@ -53,5 +53,9 @@ useSeoMeta({
   flex-direction: column;
   justify-content: center;
   padding-left: 10%;
+  h1 {
+    font-family: "Gugi", sans-serif;
+    font-size: rem(32);
+  }
 }
 </style>

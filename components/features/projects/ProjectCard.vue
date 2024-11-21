@@ -27,10 +27,17 @@ const props = defineProps({
   color: inherit;
   text-decoration: none;
   min-width: 80vw;
-  height: 75vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (min-width: 800px) {
+    height: 75vh;
+  }
+  h2 {
+    font-family: "Gugi", sans-serif;
+  }
   &__img {
     max-height: 80%;
     width: 100%;

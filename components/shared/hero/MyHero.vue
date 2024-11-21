@@ -33,7 +33,8 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .hero {
   position: relative;
-
+  width: 100vw;
+  overflow: hidden;
   .text {
     &__title {
       position: absolute;

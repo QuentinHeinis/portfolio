@@ -61,6 +61,7 @@ const variantClasses = computed(() => {
   position: relative;
   text-decoration: none;
   background: transparent;
+  font-family: "Gugi", sans-serif;
   &.-primary {
     @include hoverEffect(v-bind(color), "default");
   }

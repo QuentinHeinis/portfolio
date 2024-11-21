@@ -12,17 +12,20 @@ const { projects } = defineProps({
 
 gsap.registerPlugin(ScrollTrigger);
 const initHorizontalScroll = () => {
-  gsap.to(projectList.value, {
-    xPercent: -95 * (projects.length - 1), // Défilement à la largeur totale des éléments
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".projects",
-      pin: true,
-      scrub: 1,
+  let mm = gsap.matchMedia();
+  mm.add("screen and (min-width: 800px)", () => {
+    gsap.to(projectList.value, {
+      xPercent: -95 * (projects.length - 1), // Défilement à la largeur totale des éléments
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".projects",
+        pin: true,
+        scrub: 1,
 
-      snap: 1 / (projects.length - 1),
-      end: `+=${projectList.value.offsetWidth}`,
-    },
+        snap: 1 / (projects.length - 1),
+        end: `+=${projectList.value.offsetWidth}`,
+      },
+    });
   });
 };
 onMounted(() => {
@@ -47,9 +50,10 @@ onMounted(() => {
     sectionName="Mon portfolio"
     background-color="#212137"
     class="projects"
+    :is-overlap="false"
     class-name="projects__content -nopt"
   >
-    <MyGridBg class="projects__bg"/>
+    <MyGridBg class="projects__bg" />
     <div ref="projectList" class="projects__list">
       <ProjectCard
         v-for="project in projects"
@@ -71,15 +75,24 @@ onMounted(() => {
 .projects {
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  @media screen and (min-width: 800px) {
+    height: 100vh;
+  }
   &__list {
     display: flex;
+    flex-direction: column;
     white-space: nowrap;
     align-items: center;
     height: 100%;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
     gap: 10vw;
+
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+    }
   }
-  &__bg{
+  &__bg {
     left: 0;
   }
 }
