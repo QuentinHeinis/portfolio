@@ -15,14 +15,17 @@ onMounted(() => {
     gsap.fromTo(
       item,
       {
-        x: dir * 200,
-        y: 50,
+        x: dir * 100,
+        opacity: 0,
+        y: 100,
       },
       {
         scrollTrigger: {
           trigger: item,
         },
+        ease: "elastic.out(1, 0.8)",
         x: 0,
+        opacity: 1,
         y: 0,
       }
     );
@@ -155,6 +158,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .footer {
+  max-width: 100%;
+  overflow-x: clip;
   @include medium-up {
     display: flex;
   }

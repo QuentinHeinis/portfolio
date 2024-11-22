@@ -5,7 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  let items = gsap.utils.toArray(".list-item");
+  let items = gsap.utils.toArray([
+    ".list-item",
+    "#mes-prestations .contact-me",
+    "#mes-prestations .c-button",
+  ]);
 
   items.forEach((item, i) => {
     gsap.fromTo(

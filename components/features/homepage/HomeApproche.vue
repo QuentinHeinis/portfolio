@@ -12,8 +12,8 @@ onMounted(() => {
     let dir = i % 2 ? 1 : -1;
     let initState = {
       opacity: 0,
-      x: dir * 250,
-      y: 250,
+      x: dir * 100,
+      y: 100,
     };
     let endState = {
       opacity: 1,
@@ -23,7 +23,7 @@ onMounted(() => {
     if (isLast) {
       initState = {
         opacity: 0,
-        y: 250,
+        y: 100,
       };
       endState = {
         opacity: 1,
@@ -33,10 +33,6 @@ onMounted(() => {
     gsap.fromTo(item, initState, {
       scrollTrigger: {
         trigger: item,
-        start: "top-=150 bottom",
-        end: "bottom center+=100",
-        scrub: 0.5,
-        once: true,
       },
       ...endState,
     });

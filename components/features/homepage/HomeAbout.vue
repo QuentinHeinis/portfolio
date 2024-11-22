@@ -12,7 +12,7 @@ onMounted(() => {
   let mm = gsap.matchMedia();
   mm.add("screen and (min-width: 768px)", () => {
     for (let paragraph of text.value.children) {
-      stringListToHTML(stringSplitter(paragraph.innerText, 45), paragraph);
+      stringListToHTML(stringSplitter(paragraph.innerText, 38), paragraph);
     }
     gsap.set(".about__txt p span", {
       translateY: 50,
@@ -99,7 +99,7 @@ onMounted(() => {
     p {
       @media screen and (min-width: 800px) {
         display: flex;
-        width: 500px;
+        max-width: 500px;
         flex-direction: column;
         opacity: 0;
       }
