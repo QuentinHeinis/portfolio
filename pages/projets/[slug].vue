@@ -5,7 +5,7 @@ footerId.value = "04";
 const { client } = usePrismic();
 const route = useRoute();
 const slug = route.params.slug;
-  
+
 const { data: project } = await useAsyncData(slug, async () => {
   const document = await client.getByUID("project", slug);
 
@@ -40,6 +40,7 @@ const { data: next } = await useAsyncData("next", async () => {
 });
 const date = project.value.data.project_date;
 const clientName = project.value.data.project_client;
+const link = project.value.data.project_link.url;
 const stacks = project.value.data.project_stack;
 const title = project.value.data.project_name[0].text;
 const smallDescription = project.value.data.project_smalldesc[0].text;
@@ -54,12 +55,11 @@ useSeoMeta({
   ogDescription: description.value.slice(0, 155),
   ogImage: project.value.data.project_img.url,
 });
-
 </script>
 
 <template>
   <Hero :title :description="smallDescription" />
-  <Description :date="date.toString()" :clientName :stacks :description />
+  <Description :date="date.toString()" :clientName :stacks :description :link />
   <Images :imgs />
   <ProjectNav :next :prev />
 </template>

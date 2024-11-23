@@ -59,7 +59,7 @@ defineProps({
   }
 
   &__header {
-    padding-inline: rem(80);
+    padding-inline: rem(20);
     font-size: rem(16);
     font-weight: 400;
     height: rem(68);
@@ -69,6 +69,10 @@ defineProps({
     font-family: "Gugi", sans-serif;
     span {
       font-weight: 600;
+    }
+
+    @include small-up {
+      padding-inline: rem(80);
     }
   }
   &__content {

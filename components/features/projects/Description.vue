@@ -10,6 +10,7 @@ const props = defineProps({
   stacks: Array,
   clientName: String,
   date: String,
+  link: String,
 });
 
 const text = ref();
@@ -52,9 +53,18 @@ onMounted(() => {
     <aside>
       <div>
         <h3 v-if="clientName">Client</h3>
-        <p>{{ clientName }}</p>
+        <p v-if="clientName">{{ clientName }}</p>
         <h3>Année</h3>
         <p>{{ date }}</p>
+        <h3
+          @mouseenter="emitHovered"
+          @mouseleave="emitLeaveHovered"
+          @click="emitLeaveHovered"
+          v-if="link"
+          class="link"
+        >
+          <NuxtLink :to="link" target="_blank">Visiter le site</NuxtLink>
+        </h3>
       </div>
       <div v-if="stacks">
         <h3>Stacks</h3>
@@ -83,6 +93,19 @@ onMounted(() => {
   h3 {
     color: #dccce0;
     font-size: rem(14);
+    a {
+      color: #dccce0;
+      text-decoration: underline;
+    }
+  }
+  .link{
+    position: absolute;
+    top: 20px;
+
+    right: rem(20);
+    @include small-up {
+      right: rem(80);
+    }
   }
   &__text {
     display: flex;

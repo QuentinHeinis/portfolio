@@ -18,7 +18,7 @@ useSeoMeta({
     <p>Le site heinis.dev est édité par&nbsp;:</p>
     <ul class="undotted">
       <li>Quentin Heinis</li>
-      <li>39040 Bletterans</li>
+      <li>39140 Bletterans</li>
     </ul>
     <h3><b>C.</b> Directeur de publication</h3>
     <ul class="undotted">

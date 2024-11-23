@@ -26,17 +26,23 @@ const props = defineProps({
 .project-card {
   color: inherit;
   text-decoration: none;
-  min-width: 80vw;
+  width: 80vw;
+  
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  
   @media screen and (min-width: 800px) {
     height: 75vh;
+    min-width: 80vw;
+    width: unset;
   }
   h2 {
     font-family: "Gugi", sans-serif;
+    max-width: 100%;
+    white-space: wrap;
+    
   }
   &__img {
     max-height: 80%;
@@ -53,6 +59,13 @@ const props = defineProps({
   &__text {
     display: flex;
     justify-content: space-between;
+    p{
+      display: none;
+      @include small-up {
+        display: block;
+      }
+    }
+
   }
   &:hover {
     img {

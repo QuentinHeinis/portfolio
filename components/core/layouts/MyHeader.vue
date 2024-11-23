@@ -30,8 +30,12 @@ const toggleMenu = () => {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 24px 48px;
+  padding: 24px 24px;
   z-index: 100;
+
+  @include small-up{
+    padding: 24px 48px;
+  }
   &__btn {
     display: flex;
     gap: 4px;

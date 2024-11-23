@@ -13,7 +13,6 @@
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/prismic": "^3.4.3",
     "@vercel/analytics": "^1.3.2",
-    "curtainsjs": "^8.1.6",
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",
     "nodemailer": "^6.9.15",

@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 const props = defineProps({
   imgs: Array,
+  videos: Array,
 });
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,10 @@ onMounted(() => {
     gsap.utils
       .toArray(".section-parallax .parallax-content")
       .forEach((section, i) => {
+        if (section.classList.contains("gif")) {
+          return;
+        }
+
         const heightDiff =
           section.offsetHeight - section.parentElement.offsetHeight;
 
@@ -43,7 +48,10 @@ onMounted(() => {
     textColor="#000"
   >
     <div class="section-parallax" v-for="(img, index) in imgs" :key="index">
-      <div class="parallax-content">
+      <div
+        class="parallax-content"
+        :class="img.project_image.url.includes('.gif') && 'gif'"
+      >
         <NuxtImg :src="img.project_image.url" alt="" />
       </div>
     </div>
@@ -79,6 +87,13 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+  &.gif {
+    img {
+      object-fit: contain;
+      max-width: 800px;
+      margin-inline: auto;
+    }
   }
 }
 </style>
