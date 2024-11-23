@@ -66,7 +66,9 @@ onBeforeMount(() => {
             <MyLink @click="linkClick()" number="01" href="/">Home</MyLink>
           </li>
           <li>
-            <MyLink @click="linkClick()" number="02" href="/#a-propos">A propos</MyLink>
+            <MyLink @click="linkClick()" number="02" href="/#a-propos"
+              >A propos</MyLink
+            >
           </li>
           <li>
             <MyLink @click="linkClick()" number="03" href="/projets"
@@ -74,7 +76,9 @@ onBeforeMount(() => {
             >
           </li>
           <li>
-            <MyLink @click="linkClick()" number="04" href="/contact">Contact</MyLink>
+            <MyLink @click="linkClick()" number="04" href="/contact"
+              >Contact</MyLink
+            >
           </li>
         </ul>
       </nav>
@@ -178,6 +182,14 @@ onBeforeMount(() => {
       li {
         position: relative;
         margin-bottom: rem(10);
+        &:first-of-type {
+          display: none;
+        }
+        @media screen and (min-width: 375px) {
+          &:first-of-type {
+            display: block;
+          }
+        }
         a {
           color: #171717;
           text-decoration: none;

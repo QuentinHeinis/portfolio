@@ -14,7 +14,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .c-link {
-  font-size: rem(48);
+  font-size: rem(32);
   transition: padding 0.3s ease;
   cursor: pointer;
   display: flex;
@@ -26,7 +26,14 @@ defineProps({
     color: #962bd2;
   }
   span {
-    font-size: rem(24);
+    font-size: rem(16);
+  }
+
+  @include small-up {
+    font-size: rem(48);
+    span {
+      font-size: rem(24);
+    }
   }
 }
 </style>

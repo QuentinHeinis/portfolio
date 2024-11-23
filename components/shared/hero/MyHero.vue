@@ -39,6 +39,7 @@ onUnmounted(() => {
     &__title {
       position: absolute;
       font-size: rem(75);
+      font-family: "Gugi", sans-serif;  
       line-height: 1;
       z-index: 10;
       left: 50%;

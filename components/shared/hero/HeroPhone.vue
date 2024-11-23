@@ -8,7 +8,7 @@ onMounted(() => {
       x: 500,
       rotate: 45,
       ease: "elastic.out(.7,0.4)",
-      duration: 1.2
+      duration: 1.2,
     });
   });
 });
@@ -17,7 +17,7 @@ onMounted(() => {
 <template>
   <div class="phone">
     <div class="phone__img">
-      <NuxtImg src="/img/phoneBG.jpg" alt="image de fond" />
+      <NuxtImg src="/img/phoneBG.jpg" alt="image de fond" preload />
     </div>
     <span class="phone__name">
       <span>H</span>
@@ -35,7 +35,7 @@ onMounted(() => {
     <div class="phone__text">
       <MyGridBg :gradient="true" />
       <h1>Développeur <br />Fullstack</h1>
-      <p>Jeune développeur passionné de développement depuis 2019.</p>
+      <p>Jeune développeur passionné depuis 2019 spécialisé en développement fullstack.</p>
       <p>Basé en Franche-Comté ainsi qu'en Alsace.</p>
     </div>
     <div class="phone__chevron">
