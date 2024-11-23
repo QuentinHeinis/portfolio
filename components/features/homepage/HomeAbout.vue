@@ -76,13 +76,14 @@ onMounted(() => {
 <style lang="scss" scoped>
 .about {
   display: flex;
-  justify-content: center;
-  gap: rem(30);
+  justify-content: space-around;
+  gap: rem(30) 0;
   flex-wrap: wrap;
   &__img {
     width: 100%;
     @include small-up {
       width: 30%;
+      max-width: 400px;
     }
   }
 
