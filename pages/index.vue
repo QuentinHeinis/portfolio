@@ -6,9 +6,9 @@ useSeoMeta({
   title: "Quentin Heinis",
   ogTitle: "Quentin Heinis",
   description:
-    " Jeune développeur passionné de développement depuis 2019. Basé en Franche-Comté ainsi qu'en Alsace.",
+    "Jeune développeur passionné depuis 2019 spécialisé en développement fullstack. Basé en Franche-Comté ainsi qu'en Alsace.",
   ogDescription:
-    " Jeune développeur passionné de développement depuis 2019. Basé en Franche-Comté ainsi qu'en Alsace.",
+    "Jeune développeur passionné depuis 2019 spécialisé en développement fullstack. Basé en Franche-Comté ainsi qu'en Alsace.",
   ogImage: "/favicon.png",
 });
 </script>
