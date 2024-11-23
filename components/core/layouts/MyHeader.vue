@@ -24,7 +24,6 @@ onMounted(() => {
           trigger: logo.value.$el,
           start: "top+=300px top",
           end: "bottom center",
-          markers: true,
           scrub: true,
         },
         opacity: 1,
