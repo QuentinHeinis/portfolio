@@ -152,7 +152,7 @@ onMounted(() => {
   &__burger {
     display: none;
     position: absolute;
-    top: rem(20);
+    top: rem(32);
     right: rem(20);
     width: rem(32);
     height: rem(32);
@@ -188,7 +188,7 @@ onMounted(() => {
 
   &__name {
     position: absolute;
-    top: rem(12);
+    top: rem(32);
     left: rem(20);
     font-weight: 900;
     font-size: rem(32);
