@@ -52,7 +52,7 @@ onMounted(() => {
         class="parallax-content"
         :class="img.project_image.url.includes('.gif') && 'gif'"
       >
-        <NuxtImg :src="img.project_image.url" alt="" />
+        <NuxtImg :src="img.project_image.url" preload alt="" />
       </div>
     </div>
   </MySection>
