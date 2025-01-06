@@ -31,7 +31,7 @@ router.beforeEach((to, from, next) => {
       next();
       setTimeout(() => {
         if (!to.hash) window.scrollTo(0, 0);
-      }, 250);
+      }, 200);
     },
   });
   gsap.to(transitionScreen.value, {
