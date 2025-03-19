@@ -6,9 +6,9 @@ useSeoMeta({
   title: "Quentin Heinis",
   ogTitle: "Quentin Heinis",
   description:
-    "Jeune développeur passionné depuis 2019 spécialisé en développement fullstack. Basé en Franche-Comté ainsi qu'en Alsace.",
+    "Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
   ogDescription:
-    "Jeune développeur passionné depuis 2019 spécialisé en développement fullstack. Basé en Franche-Comté ainsi qu'en Alsace.",
+    "Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
   ogImage: "/favicon.png",
 });
 </script>
