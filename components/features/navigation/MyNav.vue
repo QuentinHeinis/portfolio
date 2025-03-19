@@ -54,7 +54,7 @@ onBeforeMount(() => {
 <template>
   <div class="menu">
     <div class="menu__img">
-      <NuxtImg src="/img/background.avif" format="webp" alt="" />
+      <NuxtImg src="/img/background.avif" format="webp" alt="image de décoration pour la navigation" aria-hidden="true"/>
     </div>
     <div class="menu__nav">
       <span class="menu__title">Menu</span>
