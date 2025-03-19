@@ -20,9 +20,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  redirect:[
-    {from:"^/projets/portfolio-eden-bourezg", to:"/projets/portfolio-template", statusCode: 301}
-  ],
 
   css: ["@/scss/main.scss"],
   runtimeConfig: {
