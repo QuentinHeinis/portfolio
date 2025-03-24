@@ -6,9 +6,9 @@ useSeoMeta({
   title: "Quentin Heinis | conception de site en Alsace et le Doubs",
   ogTitle: "Quentin Heinis | conception de site en Alsace et le Doubs",
   description:
-    "Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
+    "Quentin Heinis | Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
   ogDescription:
-    "Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
+    "Quentin Heinis | Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
   ogImage: "/favicon.png",
 });
 </script>
