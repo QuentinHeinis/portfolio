@@ -43,7 +43,7 @@ onMounted(() => {
 <template>
   <ul class="approche">
     <li class="approche__card">
-      <MyGridBg background="rgb(36, 22, 28)" />
+      <MyGridBg background="#090a11" />
       <div class="approche__video">
         <video src="/video/circularFluid.mp4" muted playsinline autoplay loop />
       </div>
@@ -56,7 +56,7 @@ onMounted(() => {
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg background="rgb(36, 22, 28)" />
+      <MyGridBg background="#090a11" />
       <div class="approche__video">
         <video
           src="/video/circularFluid-blue.mp4"
@@ -75,7 +75,7 @@ onMounted(() => {
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg background="rgb(36, 22, 28)" />
+      <MyGridBg background="#090a11" />
       <div class="approche__video">
         <video
           src="/video/circularFluid-purple.mp4"
@@ -95,7 +95,7 @@ onMounted(() => {
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg background="rgb(36, 22, 28)" />
+      <MyGridBg background="#090a11" />
       <div class="approche__video">
         <video src="/video/circularFluid.mp4" muted playsinline autoplay loop />
       </div>
@@ -108,7 +108,7 @@ onMounted(() => {
       </div>
     </li>
     <li class="approche__card">
-      <MyGridBg background="rgb(36, 22, 28)" />
+      <MyGridBg background="#090a11" />
       <div class="approche__video">
         <video
           src="/video/circularFluid-blue.mp4"
