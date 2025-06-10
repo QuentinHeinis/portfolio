@@ -1,35 +1,6 @@
 <script lang="ts" setup>
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 defineProps({
   id: String,
-});
-
-gsap.registerPlugin(ScrollTrigger);
-
-onMounted(() => {
-  let items = gsap.utils.toArray<HTMLElement>("footer section");
-
-  items.forEach((item, i) => {
-    let dir = i % 2 ? 1 : -1;
-    gsap.fromTo(
-      item,
-      {
-        x: dir * 100,
-        opacity: 0,
-        y: 100,
-      },
-      {
-        scrollTrigger: {
-          trigger: item,
-        },
-        ease: "elastic.out(1, 0.8)",
-        x: 0,
-        opacity: 1,
-        y: 0,
-      }
-    );
-  });
 });
 </script>
 
