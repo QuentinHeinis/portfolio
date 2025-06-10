@@ -121,7 +121,7 @@ defineProps({
       </div>
       <div class="footer__bottom">
         <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
-        <p>© {{new Date().getFullYear()}} Quentin Heinis</p>
+        <p>© {{ new Date().getFullYear() }} Quentin Heinis</p>
       </div>
     </MySection>
   </footer>
@@ -218,6 +218,12 @@ defineProps({
     a {
       text-decoration: none;
       color: inherit;
+      transition: all 0.3s ease;
+      @include medium-up {
+        &:hover {
+          padding-left: rem(12);
+        }
+      }
     }
   }
   &__socials {
@@ -235,6 +241,11 @@ defineProps({
         border-radius: 50%;
         outline: #f15a52 2px solid;
         outline-offset: -1px;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        &:hover,
+        &:focus {
+          transform: scale(1.1);
+        }
       }
     }
   }
