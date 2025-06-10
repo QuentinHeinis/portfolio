@@ -21,6 +21,7 @@ defineProps({
   color: inherit;
   text-decoration: none;
   font-family: "Asgard", sans-serif;
+  font-weight: 700;
   &:hover {
     padding-left: rem(20);
     color: #962bd2;
