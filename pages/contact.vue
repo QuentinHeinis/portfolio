@@ -137,7 +137,7 @@ useSeoMeta({
   padding-left: 10%;
   h1,
   p b {
-    font-family: "Gugi", sans-serif;
+    font-family: "Asgard", sans-serif;
   }
   h1 {
     font-size: rem(32);
@@ -147,7 +147,7 @@ useSeoMeta({
   form {
     max-width: $md;
     margin-inline: auto;
-    font-family: "Gugi", sans-serif;
+    font-family: "Asgard", sans-serif;
     label {
       display: flex;
       flex-direction: column;
@@ -162,10 +162,10 @@ useSeoMeta({
       border-radius: 40px;
       padding-inline: 20px;
       transition: all 0.3s ease;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "CodecPro", Arial, Helvetica, sans-serif;
       &:focus {
         outline: none;
-        border: #ff9633 2px solid;
+        border: #f15a52 2px solid;
       }
     }
     textarea {
@@ -174,7 +174,7 @@ useSeoMeta({
       max-height: 500px;
       resize: vertical;
       margin-bottom: 20px;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "CodecPro", Arial, Helvetica, sans-serif;
       border: #000 1px solid;
       background: transparent;
       color: #fff;
@@ -183,7 +183,7 @@ useSeoMeta({
       padding-top: 16px;
       &:focus {
         outline: none;
-        border: #ff9633 2px solid;
+        border: #f15a52 2px solid;
       }
     }
     .flex {

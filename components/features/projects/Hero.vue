@@ -29,7 +29,7 @@ const img = props.imgUrl
   justify-content: center;
   padding-left: 10%;
   h1 {
-    font-family: "Gugi", sans-serif;
+    font-family: "Asgard", sans-serif;
     font-size: rem(32);
   }
 }

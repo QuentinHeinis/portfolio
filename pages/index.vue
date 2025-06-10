@@ -14,20 +14,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <section class="hero">
-    <MyHero />
-  </section>
+  <MyHero />
   <MySection
     id="01"
-    section-name="Mon approche"
-    class="section"
-    background-color="rgb(29, 17, 22)"
-    overflow="hidden"
-  >
-    <HomeApproche />
-  </MySection>
-  <MySection
-    id="02"
     section-name="Mes prestations"
     background-color="#e3d7c0"
     text-color="#000"
@@ -36,23 +25,27 @@ useSeoMeta({
     <HomePrestations />
   </MySection>
   <MySection
+    id="02"
+    section-name="Mon approche"
+    class="section"
+    background-color="#090a11"
+    overflow="hidden"
+  >
+    <HomeApproche />
+  </MySection>
+
+  <!-- <MySection
     id="03"
     section-name="A propos"
     class="section"
-    background-color="#c5e1c0"
-    text-color="#000"
+    background-color="#0f120e"
   >
     <HomeAbout />
-  </MySection>
+  </MySection> -->
 </template>
 
 <style lang="scss" scoped>
 section {
-  background: rgb(38, 34, 46);
-}
-
-.hero {
-  position: relative;
-  min-height: 100vh;
+  background: #090a11;
 }
 </style>

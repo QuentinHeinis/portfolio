@@ -42,13 +42,16 @@ onMounted(() => {
     },
   });
 });
+onBeforeUnmount(() => {
+  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+});
 </script>
 
 <template>
   <MySection
     id="01"
     sectionName="Mon portfolio"
-    background-color="#212137"
+    background-color="#090a11"
     class="projects"
     :is-overlap="false"
     class-name="projects__content -nopt"

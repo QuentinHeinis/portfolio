@@ -39,7 +39,7 @@ onMounted(() => {
       :id
       sectionName="Une envie ?"
       backgroundColor="#eec3c1"
-      textColor="#000"
+      textColor="#fff"
       class="footer__envie"
     >
       <div class="video">
@@ -57,7 +57,7 @@ onMounted(() => {
           Vous avez un projet en tête ? Vous souhaitez en discuter ? N'hésitez
           pas à me contacter pour en discuter.
         </p>
-        <MyBtn class="btn" variant="third" color="black" href="/contact"
+        <MyBtn class="btn" variant="third" color="#e3d7c0" href="/contact"
           >Me contacter</MyBtn
         >
       </div>
@@ -65,7 +65,7 @@ onMounted(() => {
     <MySection
       :id="`0${Number(id) + 1}`"
       sectionName="Footer"
-      backgroundColor="#b9a5e2"
+      backgroundColor="#e3d7c0"
       textColor="#000"
       class="footer__footer"
     >
@@ -175,11 +175,11 @@ onMounted(() => {
     }
     .video {
       position: absolute;
-      top: rem(68);
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 0;
+      z-index: -1;
       width: 100%;
       height: 100%;
       video {
@@ -196,19 +196,19 @@ onMounted(() => {
       z-index: 1;
       p {
         max-width: rem(500);
-        font-weight: 900;
+        font-weight: 400;
       }
     }
     .btn {
       margin-top: rem(30);
-      font-weight: 900;
+      font-weight: 400;
       max-width: fit-content;
-      color: #000;
+      color: #fff;
+      border-color: #fff;
       &:hover,
       &:focus {
-        color: #fff;
-        border-color: #ff9633;
-        border-width: 2px;
+        color: #000;
+        border-color: #e3d7c0;
         transition: all 0.1s ease;
       }
     }

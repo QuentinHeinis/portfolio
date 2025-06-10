@@ -35,7 +35,10 @@ onMounted(() => {
     <div class="phone__text">
       <MyGridBg :gradient="true" />
       <h1>Développeur <br />Fullstack</h1>
-      <p>Jeune développeur passionné depuis 2019 spécialisé en développement fullstack.</p>
+      <p>
+        Jeune développeur passionné depuis 2019 spécialisé en développement
+        fullstack.
+      </p>
       <p>Basé en Franche-Comté ainsi qu'en Alsace.</p>
     </div>
     <div class="phone__chevron">
@@ -197,7 +200,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Gugi", sans-serif;
+    font-family: "Asgard", sans-serif;
   }
   &__socials {
     display: flex;
@@ -266,7 +269,7 @@ onMounted(() => {
     margin-bottom: rem(20);
     margin-left: rem(30);
     font-weight: 900;
-    font-family: "Gugi", sans-serif;
+    font-family: "Asgard", sans-serif;
   }
   p {
     margin-inline: rem(30);

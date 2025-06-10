@@ -16,6 +16,8 @@ const rectangles = reactive([]);
 
 let lines = reactive([]);
 
+const color = "#c4bfb7"; 
+
 const drawRectangle = (
   rectX,
   rectY,
@@ -29,10 +31,10 @@ const drawRectangle = (
   const x = centerX - squareSize / 2 + rectX;
   const y = centerY - squareSize / 2 + rectY;
   if (isFill) {
-    ctx.value.fillStyle = "#c3b1e1";
+    ctx.value.fillStyle = color;
     ctx.value.fillRect(x, y, width, height);
   } else {
-    ctx.value.strokeStyle = "#c3b1e1";
+    ctx.value.strokeStyle = color;
     ctx.value.lineWidth = 1.5;
     ctx.value.strokeRect(x, y, width, height);
   }
@@ -43,7 +45,7 @@ const drawRectangle = (
     hoveredIndex.value ===
       rectangles.findIndex((r) => r.x === rectX && r.y === rectY)
   ) {
-    ctx.value.fillStyle = "#c3b1e1"; // Couleur d'illumination
+    ctx.value.fillStyle = color; // Couleur d'illumination
     ctx.value.fillRect(x, y, width, height);
   }
 };
@@ -114,8 +116,7 @@ const handleMouseMove = (event) => {
   const mouseX = event.clientX - rect.left;
   const mouseY = event.clientY - rect.top;
 
-  hoveredIndex.value = null; // Réinitialise l'index survolé
-
+  hoveredIndex.value = null; 
   rectangles.forEach((rect, index) => {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
@@ -151,7 +152,7 @@ onMounted(() => {
   }
   ctx.value = canvas.value.getContext("2d");
 
-  resizeCanvas(); // Set initial size
+  resizeCanvas(); 
 
   window.addEventListener("resize", resizeCanvas);
   window.addEventListener("mousemove", handleMouseMove);

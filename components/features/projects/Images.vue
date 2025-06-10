@@ -44,7 +44,7 @@ onMounted(() => {
     className="images"
     id="02"
     sectionName="Photos"
-    backgroundColor="rgb(217, 184, 155)"
+    backgroundColor="#e3d7c0"
     textColor="#000"
   >
     <div class="section-parallax" v-for="(img, index) in imgs" :key="index">

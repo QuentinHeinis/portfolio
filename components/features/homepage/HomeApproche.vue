@@ -165,7 +165,7 @@ onMounted(() => {
       margin-bottom: rem(20);
       font-weight: 900;
       text-transform: uppercase;
-      font-family: "Gugi", sans-serif;
+      font-family: "Asgard", sans-serif;
     }
   }
   &__video {

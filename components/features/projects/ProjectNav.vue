@@ -6,7 +6,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <MySection id="03" sectionName="Voir plus de projets">
+  <MySection id="03" background-color="#090a11"  sectionName="Voir plus de projets">
     <MyGridBg class="projects__bg" />
     <div class="project-nav">
       <NuxtLink

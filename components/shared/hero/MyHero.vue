@@ -39,12 +39,12 @@ onUnmounted(() => {
     &__title {
       position: absolute;
       font-size: rem(75);
-      font-family: "Gugi", sans-serif;  
+      font-family: "Asgard", sans-serif;
       line-height: 1;
       z-index: 10;
       left: 50%;
       top: 50%;
-      color: #c3b1e1;
+      color: #c4bfb7;
       --left: -4px;
       translate: calc(
           var(--left) * v-bind(squareSize) - 0.5px * v-bind(squareSize)
@@ -60,7 +60,7 @@ onUnmounted(() => {
       z-index: 0;
       left: 50%;
       top: 50%;
-      color: #c3b1e1;
+      color: #c4bfb7;
       --left: -2px;
       translate: calc(
           var(--left) * v-bind(squareSize) - 0.5px * v-bind(squareSize)
