@@ -89,7 +89,7 @@ onBeforeMount(() => {
               >Mentions légales</NuxtLink
             >
           </li>
-          <li>© 2024 Quentin Heinis</li>
+          <li>© {{new Date().getFullYear()}}  Quentin Heinis</li>
         </ul>
       </div>
     </div>

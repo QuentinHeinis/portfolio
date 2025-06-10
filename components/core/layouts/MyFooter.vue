@@ -150,7 +150,7 @@ onMounted(() => {
       </div>
       <div class="footer__bottom">
         <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
-        <p>© 2024 Quentin Heinis</p>
+        <p>© {{new Date().getFullYear()}} Quentin Heinis</p>
       </div>
     </MySection>
   </footer>
