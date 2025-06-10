@@ -20,7 +20,7 @@ onUnmounted(() => {
     <HeroBackground :squareSize v-if="!isMobile" />
     <HeroPhone />
     <div class="text" v-if="!isMobile">
-      <h2 class="text__title">Quentin <br />Heinis</h2>
+      <h2 class="text__title"><span>Q</span>uentin <br /><span>H</span>einis</h2>
       <ul class="text__link">
         <li>Lorem</li>
         <li>Ipsum</li>
@@ -40,6 +40,7 @@ onUnmounted(() => {
       position: absolute;
       font-size: rem(75);
       font-family: "Asgard", sans-serif;
+      font-feature-settings: 'ss01' 1;
       line-height: 1;
       z-index: 10;
       left: 50%;
@@ -52,6 +53,9 @@ onUnmounted(() => {
         calc(-4.5px * v-bind(squareSize) - 0.5px * v-bind(squareSize));
       @media screen and (min-width: 1150px) {
         --left: -7px;
+      }
+      span{
+        font-variation-settings: "wdth" 1000, 'wght' 500;
       }
     }
     &__link {
