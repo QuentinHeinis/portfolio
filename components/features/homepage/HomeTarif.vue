@@ -86,7 +86,7 @@ const pricingPlans = ref([
                         <p>{{ plan.features.projects }}</p>
                         <p>{{ plan.features.support }}</p>
                     </div>
-                    <MyBtn variant="third" :href="`/contact?plan=`" color="#090a11" class="plan-button">
+                    <MyBtn variant="third" :href="plan.button.link" color="#090a11" class="plan-button">
                         {{ plan.button.text }}
                     </MyBtn>
 

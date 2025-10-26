@@ -8,6 +8,15 @@ const mail = reactive({
   subject: "",
   message: "",
 });
+
+const route = useRoute();
+onMounted(() => {
+  // Vérifie si le query param 'plan' existe
+  const plan = route.query.plan;
+  if (plan === "vitrine") mail.subject = "Demande pour site vitrine";
+  else if (plan === "ecommerce") mail.subject = "Demande pour site e-commerce";
+  else if (plan === "devis") mail.subject = "Demande de devis";
+});
 const mailsent = ref(false);
 const body = computed(() => {
   return JSON.stringify(mail);
@@ -67,7 +76,7 @@ useSeoMeta({
     class="contact"
     id="01"
     section-name="Formulaire de contact"
-    background-color="#a2c6b2"
+    background-color="#e3d7c0"
     text-color="#000"
   >
     <form>

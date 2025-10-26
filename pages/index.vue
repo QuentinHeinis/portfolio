@@ -22,7 +22,7 @@ useSeoMeta({
     <HomeApproche />
   </MySection>
 
-  <MySection id="03" section-name="Mon approche" class="section" background-color="#e3d7c0" text-color="#000" overflow="hidden">
+  <MySection id="03" section-name="Mes tarifs" class="section" background-color="#e3d7c0" text-color="#000" overflow="hidden">
     <HomeTarif/>
   </MySection>
 
