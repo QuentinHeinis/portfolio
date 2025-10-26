@@ -12,7 +12,6 @@ const props = defineProps({
   date: String,
   link: String,
 });
-console.log(props.clientName);
 
 const text = ref();
 

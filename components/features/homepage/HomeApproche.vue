@@ -5,11 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 onMounted(() => {
   const cards = gsap.utils.toArray(".approche__card");
   const section = document.querySelector(".approche");
 
   const mm = gsap.matchMedia();
+  
 
   mm.add(
     {
@@ -105,6 +107,10 @@ onMounted(() => {
     }
   );
 });
+
+onBeforeUnmount(()=>{
+  ScrollTrigger.getAll().forEach((trigger)=>trigger.kill())
+})
 </script>
 
 

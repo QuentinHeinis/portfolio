@@ -36,10 +36,9 @@ onMounted(() => {
       <MyGridBg :gradient="true" />
       <h1>Développeur <br />Fullstack</h1>
       <p>
-        Jeune développeur passionné depuis 2019 spécialisé en développement
-        fullstack.
+        Jeune développeur passionné depuis 2019 spécialisé en développement de site internet, d'applications et autres services..
       </p>
-      <p>Basé en Franche-Comté ainsi qu'en Alsace.</p>
+      <p>Je suis basé en Franche-Comté ainsi qu'en Alsace.</p>
     </div>
     <div class="phone__chevron">
       <span></span>
@@ -130,7 +129,7 @@ onMounted(() => {
     max-height: 80vh;
     top: 50%;
     translate: 0 calc(-50%);
-    left: 45%;
+    left: 55%;
     outline: 7px solid rgb(20, 20, 20);
     outline-offset: 5px;
     border-radius: rem(45);
@@ -149,7 +148,7 @@ onMounted(() => {
     }
   }
   @include large-up {
-    left: 55%;
+    left: 60%;
   }
 
   &__burger {
@@ -223,7 +222,7 @@ onMounted(() => {
       animation: ChevronWaves 2s alternate infinite linear;
       position: absolute;
       bottom: rem(90);
-      left: rem(20);
+      left: rem(10);
       height: rem(15);
       width: rem(15);
       display: block;
@@ -274,7 +273,7 @@ onMounted(() => {
   p {
     margin-inline: rem(30);
     color: #d692a9;
-    font-size: rem(20);
+    font-size: rem(14);
     font-weight: 500;
   }
 

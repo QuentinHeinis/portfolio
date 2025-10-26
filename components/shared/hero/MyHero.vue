@@ -1,5 +1,5 @@
 <script setup>
-const squareSize = 75;
+const squareSize = 65;
 
 const isMobile = ref(true);
 
