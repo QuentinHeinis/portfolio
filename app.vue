@@ -5,6 +5,7 @@ const footerId = useState("footerId");
 
 const route = useRoute()
 
+const loaderAnime = useState("loaderAnime", () => false);
 
 onMounted(() => {
   const lenis = useState("lenis", () => new Lenis());
@@ -58,6 +59,7 @@ watch(() => route.fullPath, () => pageLoaded())
 </script>
 <template>
   <div>
+    <MyLoader/>
     <MyCursor />
     <MyHeader />
     <main>
