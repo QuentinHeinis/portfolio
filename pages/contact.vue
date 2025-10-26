@@ -1,6 +1,6 @@
 <script setup>
 const footerId = useState("footerId");
-footerId.value = "02";
+footerId.value = "03";
 
 const mail = reactive({
   name: "",
@@ -72,67 +72,53 @@ useSeoMeta({
       Utilisez le formulaire de contact ou bien contactez moi via mes réseaux
     </p>
   </section>
-  <MySection
-    class="contact"
-    id="01"
-    section-name="Formulaire de contact"
-    background-color="#e3d7c0"
-    text-color="#000"
-  >
+  <MySection class="contact" id="01" section-name="Formulaire de contact" background-color="#e3d7c0" text-color="#000">
     <form>
       <div class="flex">
         <label>
           Prénom - Nom :
-          <input
-            type="text"
-            placeholder="Prénom - Nom"
-            v-model="mail.name"
-            required
-          />
+          <input type="text" placeholder="Prénom - Nom" v-model="mail.name" required />
         </label>
         <label>
           Email :
-          <input
-            type="email"
-            placeholder="Email"
-            v-model="mail.email"
-            required
-          />
+          <input type="email" placeholder="Email" v-model="mail.email" required />
         </label>
       </div>
       <label>
         Sujet :
-        <input
-          type="text"
-          placeholder="Sujet"
-          v-model="mail.subject"
-          required
-        />
+        <input type="text" placeholder="Sujet" v-model="mail.subject" required />
       </label>
 
       <div>
         <p>Message :</p>
-        <textarea
-          placeholder="Message"
-          v-model="mail.message"
-          required
-        ></textarea>
+        <textarea placeholder="Message" v-model="mail.message" required></textarea>
       </div>
-      <MyBtn
-        @click.prevent="sendMail()"
-        ref="btn"
-        :disabled="mailsent"
-        variant="third"
-        class="btn"
-        color="black"
-      >
+      <MyBtn @click.prevent="sendMail()" ref="btn" :disabled="mailsent" variant="third" class="btn" color="black">
         {{ btnContent }}
       </MyBtn>
     </form>
   </MySection>
+  <MySection id="02" sectionName="Mes projets" background-color="#090a11" :is-overlap="true">
+    <MyGridBg class="bg" />
+    <div class="cta">
+      <h2>Découvrez mes projets récents</h2>
+      <p>Plongez dans mes dernières réalisations et trouvez l’inspiration pour le vôtre.</p>
+      <MyBtn href="/projets" variant="third" color="#fff" class="btn">Voir mes projets</MyBtn>
+    </div>
+  </MySection>
 </template>
 
 <style lang="scss" scoped>
+.bg{
+  left: 0;
+  top: rem(70);
+}
+.cta .btn{
+  max-width: fit-content;
+  &:hover{
+    color: #000;
+  }
+}
 .hero {
   height: 60vh;
   background-image: url("/img/projectsTemplate/background.jpg");
@@ -144,25 +130,30 @@ useSeoMeta({
   flex-direction: column;
   justify-content: center;
   padding-left: 10%;
+
   h1,
   p b {
     font-family: "Asgard", sans-serif;
   }
+
   h1 {
     font-size: rem(32);
   }
 }
+
 .contact {
   form {
     max-width: $md;
     margin-inline: auto;
     font-family: "Asgard", sans-serif;
+
     label {
       display: flex;
       flex-direction: column;
       width: 100%;
       margin-bottom: 20px;
     }
+
     input {
       height: 48px;
       border: #000 1px solid;
@@ -172,11 +163,13 @@ useSeoMeta({
       padding-inline: 20px;
       transition: all 0.3s ease;
       font-family: "CodecPro", Arial, Helvetica, sans-serif;
+
       &:focus {
         outline: none;
         border: #f15a52 2px solid;
       }
     }
+
     textarea {
       width: 100%;
       min-height: 200px;
@@ -190,22 +183,26 @@ useSeoMeta({
       border-radius: 20px;
       padding-inline: 20px;
       padding-top: 16px;
+
       &:focus {
         outline: none;
         border: #f15a52 2px solid;
       }
     }
+
     .flex {
       display: flex;
       width: 100%;
       column-gap: 50px;
       flex-wrap: wrap;
+
       label {
         @include small-up {
           width: calc(50% - 25px);
         }
       }
     }
+
     .btn {
       width: fit-content;
       margin-inline: auto;
