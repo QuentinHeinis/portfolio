@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import MyBtn from '~/components/shared/UI/MyBtn.vue';
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 const pricingPlans = ref([
     {
         name: 'Site Vitrine',
@@ -55,7 +56,23 @@ const pricingPlans = ref([
     }
 ])
 
-
+onMounted(() => {
+    const cards = gsap.utils.toArray<HTMLElement>('.pricing-card')
+    cards.forEach((card, i) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            delay: i * 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            }
+        })
+    })
+})
 
 </script>
 
@@ -71,7 +88,7 @@ const pricingPlans = ref([
         </div>
 
         <div class="pricing-cards">
-            <div v-for="(plan, index) in pricingPlans" :key="index" class="pricing-card-wrapper">
+            <NuxtLink :to="plan.button.link" v-for="(plan, index) in pricingPlans" :key="index" class="pricing-card-wrapper">
                 <div :class="['pricing-card', plan.name === 'Business' ? 'featured' : '']">
                     <span class="plan-name">{{ plan.name }}</span>
                     <h2 class="plan-price">
@@ -172,7 +189,7 @@ const pricingPlans = ref([
                         </svg>
                     </span>
                 </div>
-            </div>
+            </NuxtLink>
         </div>
         <div class="additional-services">
             <p>
@@ -228,6 +245,7 @@ const pricingPlans = ref([
             max-width: 375px;
             padding: 0 15px;
             margin-bottom: 40px;
+            text-decoration: none;
         }
 
         .pricing-card {
@@ -236,11 +254,33 @@ const pricingPlans = ref([
             border: 2px solid #eee;
             border-radius: 10px;
             padding: 50px 30px;
-            
-            transition: all 0.3s ease;
-            @include medium-up{
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-10px) scale(1.02);
+                border-color: #f15a52;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+                .svg-circle-large,
+                .svg-circle-small {
+                    transform: scale(1.15);
+                    opacity: 0.8;
+                }
+            }
+
+            .svg-circle-large,
+            .svg-circle-small {
+                transition: transform 0.6s ease, opacity 0.6s ease;
+            }
+
+
+
+            @include medium-up {
                 box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
             }
+
             &.featured {
                 border-color: #f15a52;
             }
