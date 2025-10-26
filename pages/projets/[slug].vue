@@ -39,7 +39,7 @@ const { data: next } = await useAsyncData("next", async () => {
   }
 });
 const date = project.value.data.project_date;
-const clientName = project.value.data.project_client;
+const clientName = project.value.data.client_name[0].text;
 const link = project.value.data.project_link.url;
 const stacks = project.value.data.project_stack;
 const title = project.value.data.project_name[0].text;

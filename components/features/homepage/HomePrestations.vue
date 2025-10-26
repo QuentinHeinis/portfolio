@@ -51,7 +51,11 @@ onMounted(() => {
             </p>
           </div>
           <div class="img">
-            <NuxtImg src="/graphics/76.png" alt="Graphique décoratif" aria-hidden="true" />
+            <NuxtImg
+              src="/graphics/76.png"
+              alt="Graphique décoratif"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </template>
@@ -69,7 +73,11 @@ onMounted(() => {
             </p>
           </div>
           <div class="img">
-            <NuxtImg src="/graphics/54.png" alt="Graphique décoratif" aria-hidden="true" />
+            <NuxtImg
+              src="/graphics/54.png"
+              alt="Graphique décoratif"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </template>
@@ -90,7 +98,11 @@ onMounted(() => {
             </p>
           </div>
           <div class="img">
-            <NuxtImg src="/graphics/11.png" alt="Graphique décoratif" aria-hidden="true"/>
+            <NuxtImg
+              src="/graphics/11.png"
+              alt="Graphique décoratif"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </template>
@@ -108,7 +120,11 @@ onMounted(() => {
             </p>
           </div>
           <div class="img">
-            <NuxtImg src="/graphics/55.png" alt="Graphique décoratif" aria-hidden="true"/>
+            <NuxtImg
+              src="/graphics/55.png"
+              alt="Graphique décoratif"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </template>
@@ -133,7 +149,11 @@ onMounted(() => {
             </p>
           </div>
           <div class="img">
-            <NuxtImg src="/graphics/49.png" alt="Graphique décoratif" aria-hidden="true"/>
+            <NuxtImg
+              src="/graphics/49.png"
+              alt="Graphique décoratif"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </template>
@@ -195,9 +215,14 @@ onMounted(() => {
   color: #000;
   &:hover {
     color: #fff;
-    border-color: #ff9633;
     border-width: 2px;
     transition: all 0.1s ease;
+  }
+  &:focus {
+    color: #fff;
+    border-width: 2px;
+    transition: all 0.1s ease;
+    outline: none;
   }
 }
 </style>

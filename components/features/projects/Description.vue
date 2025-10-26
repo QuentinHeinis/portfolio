@@ -48,8 +48,13 @@ onMounted(() => {
     className="project-description"
     id="01"
     sectionName="Description"
-    backgroundColor="#454059"
+    backgroundColor="#090a11"
   >
+    <div class="project-description__text" ref="text">
+      <p v-for="(paragraph, index) in description" :key="index">
+        {{ paragraph.text }}
+      </p>
+    </div>
     <aside>
       <div>
         <h3 v-if="clientName">Client</h3>
@@ -73,11 +78,6 @@ onMounted(() => {
         </p>
       </div>
     </aside>
-    <div class="project-description__text" ref="text">
-      <p v-for="(paragraph, index) in description" :key="index">
-        {{ paragraph.text }}
-      </p>
-    </div>
   </MySection>
 </template>
 
@@ -98,7 +98,7 @@ onMounted(() => {
       text-decoration: underline;
     }
   }
-  .link{
+  .link {
     position: absolute;
     top: 20px;
 
@@ -125,6 +125,10 @@ onMounted(() => {
     width: 500px;
     display: flex;
     justify-content: space-around;
+    margin-top: 50px;
+    @media screen and (min-width: 800px) {
+      margin-top: 0;
+    }
   }
 }
 </style>

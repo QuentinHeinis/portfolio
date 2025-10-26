@@ -44,7 +44,7 @@ onMounted(() => {
       @mouseleave="emitLeaveHovered"
       @click="emitLeaveHovered"
     >
-      <NuxtImg src="/img/logowhite.png" alt="logo Quentin Heinis" />
+      <NuxtImg src="/logo.svg" alt="logo Quentin Heinis" />
     </NuxtLink>
     <MyNav :isOpen :linkClick="() => toggleMenu()" />
     <div class="header__btn">
@@ -65,7 +65,7 @@ onMounted(() => {
   padding: 24px 24px;
   z-index: 100;
   &__logo {
-    width: 48px;
+    width: 28px;
     img {
       width: 100%;
     }

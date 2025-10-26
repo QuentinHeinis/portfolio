@@ -2,7 +2,7 @@
 defineProps({
   background: {
     type: String,
-    default: "#1d1b1d",
+    default: "#090a11",
   },
   gradient: {
     type: Boolean,
@@ -30,10 +30,12 @@ defineProps({
     background: transparent;
     background-image: none;
     background-size: auto;
-    background-image: linear-gradient(#f0eae0 0.1rem, transparent 0),
-      linear-gradient(90deg, #f0eae0 0.1rem, transparent 0);
-    background-size: clamp(40px, 40/1440 * 100vw, 40/1440 * 100vw)
-      clamp(40px, 40/1440 * 100vw, 40/1440 * 100vw);
+background-image: 
+  linear-gradient(#f0eae0 0.035rem, transparent 0),
+  linear-gradient(90deg, #f0eae0 0.035rem, transparent 0);
+background-size: 
+  clamp(30px, 20/1440 * 100vw, 20/1440 * 100vw)
+  clamp(30px, 20/1440 * 100vw, 20/1440 * 100vw);
     opacity: 0.1;
     height: 100%;
   }

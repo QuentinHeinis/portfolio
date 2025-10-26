@@ -61,7 +61,7 @@ const variantClasses = computed(() => {
   position: relative;
   text-decoration: none;
   background: transparent;
-  font-family: "Gugi", sans-serif;
+  font-family: "Asgard", sans-serif;
   &.-primary {
     @include hoverEffect(v-bind(color), "default");
   }
@@ -69,7 +69,7 @@ const variantClasses = computed(() => {
     @include hoverEffect(v-bind(color), "secondary");
   }
   &.-third {
-    @include hoverEffect(v-bind(color), "secondary");
+    @include hoverEffect(v-bind(color), "default");
     padding-right: rem(60);
     #{$this}__chevron {
       position: absolute;
@@ -94,13 +94,13 @@ const variantClasses = computed(() => {
         translate: 0 -2px;
       }
     }
-
+    border-color: #000;
     &:hover,
     &:focus {
       #{$this}__chevron {
         scale: 1;
         rotate: -90deg;
-        background: #ff9633;
+        background: #f15a52;
         span {
           border-color: #000;
         }

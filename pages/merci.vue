@@ -37,7 +37,7 @@ useSeoMeta({
     &:hover {
       color: #000;
       outline: none;
-      border: #ff9633 2px solid;
+      border: #f15a52 2px solid;
     }
   }
 }

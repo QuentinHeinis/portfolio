@@ -3,6 +3,10 @@ import Lenis from "lenis";
 import gsap from "gsap";
 const footerId = useState("footerId");
 
+const route = useRoute()
+
+const loaderAnime = useState("loaderAnime", () => false);
+
 onMounted(() => {
   const lenis = useState("lenis", () => new Lenis());
 
@@ -13,6 +17,9 @@ onMounted(() => {
   requestAnimationFrame(raf);
 
   console.log("made with ❤️ by Quentin Heinis");
+
+
+
 });
 
 const transitionScreen = ref();
@@ -22,15 +29,23 @@ router.beforeEach((to, from, next) => {
   gsap.to(transitionScreen.value, {
     x: "0%",
     duration: 0.5,
+    onComplete: () => {
+      next()
+    }
   });
+
+
+});
+
+
+const pageLoaded = () => {
   gsap.to(transitionScreen.value, {
     x: "100%",
     duration: 1,
     delay: 0.8,
     onStart: () => {
-      next();
       setTimeout(() => {
-        if (!to.hash) window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
       }, 150);
     },
   });
@@ -39,18 +54,16 @@ router.beforeEach((to, from, next) => {
     duration: 0,
     delay: 1.8,
   });
-});
+};
+watch(() => route.fullPath, () => pageLoaded())
 </script>
 <template>
   <div>
+    <MyLoader/>
     <MyCursor />
     <MyHeader />
     <main>
-      <div
-        ref="transitionScreen"
-        class="transition-screen"
-        aria-hidden="true"
-      ></div>
+      <div ref="transitionScreen" class="transition-screen" aria-hidden="true"></div>
       <NuxtPage />
     </main>
     <MyFooter :id="footerId" />

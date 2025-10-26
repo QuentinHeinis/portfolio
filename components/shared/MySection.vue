@@ -66,7 +66,7 @@ defineProps({
     display: flex;
     align-items: center;
     border-bottom: 2px solid v-bind(textColor);
-    font-family: "Gugi", sans-serif;
+    font-family: "Asgard", sans-serif;
     span {
       font-weight: 600;
     }

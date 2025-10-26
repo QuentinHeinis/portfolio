@@ -59,7 +59,7 @@ const toggleScrub = () => {
     align-items: center;
     cursor: pointer;
     user-select: none;
-    font-family: "Gugi", sans-serif;
+    font-family: "Asgard", sans-serif;
   }
   &__desc {
     display: grid;
@@ -97,14 +97,14 @@ const toggleScrub = () => {
     }
   }
   &__title:hover {
-    color: #e3ffde;
+    color: #e3d7c0;
     padding-left: rem(12);
   }
   &:hover {
     #{$this}__chevron {
       scale: 1;
       rotate: 0deg;
-      background: #ff9633;
+      background: #f15a52;
       span {
         border-color: #000;
       }
@@ -120,13 +120,13 @@ const toggleScrub = () => {
       padding-left: rem(12);
     }
     &:hover #{$this}__title {
-      color: #e3ffde;
+      color: #e3d7c0;
       padding-left: rem(12);
     }
     #{$this}__chevron {
       scale: 1;
       rotate: 180deg;
-      background: #ff9633;
+      background: #f15a52;
       span {
         border-color: #000;
       }
