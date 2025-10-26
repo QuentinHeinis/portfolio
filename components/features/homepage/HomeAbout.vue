@@ -1,32 +1,42 @@
 <script lang="ts" setup>
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { stringListToHTML, stringSplitter } from "~/utils/stringSplitter";
 
-const text = ref();
+const text = ref<HTMLElement>();
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
 onMounted(() => {
   gsap.fromTo(".about__txt p", { opacity: 0 }, { opacity: 1 });
 
   let mm = gsap.matchMedia();
   mm.add("screen and (min-width: 768px)", () => {
-    for (let paragraph of text.value.children) {
-      stringListToHTML(stringSplitter(paragraph.innerText, 38), paragraph);
-    }
-    gsap.set(".about__txt p span", {
-      translateY: 50,
-      opacity: 0,
-    });
+    if (!text.value) return;
 
-    const spans = gsap.utils.toArray<HTMLElement>(".about__txt p span");
-    spans.forEach((span) => {
-      gsap.to(span, {
-        translateY: 0,
-        opacity: 1,
+    // Split chaque paragraphe en lettres
+    const paragraphs = text.value.querySelectorAll("p");
+    paragraphs.forEach((p) => {
+      const split = SplitText.create(p, {
+        type: "words, lines", // on split en mots et lignes
+        mask: "lines", // ajoute un masque autour de chaque ligne
+        linesClass: "line++", // ajoute .line1, .line2, etc.
+      });
+
+      // Animation par ligne et mot
+      gsap.from(split.words, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: {
+          each: 0.02,
+          from: "start",
+        },
         scrollTrigger: {
-          trigger: span,
-          start: "top bottom-=50px",
+          trigger: p,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
         },
       });
     });
@@ -34,11 +44,9 @@ onMounted(() => {
 });
 </script>
 
+
 <template>
   <div class="about">
-    <div class="about__img">
-      <NuxtImg src="/img/me.jpg" alt="Photo de Quentin Heinis" loading="lazy" />
-    </div>
     <div class="about__txt" ref="text">
       <p>Bonjour !</p>
       <p>
@@ -57,12 +65,8 @@ onMounted(() => {
       </p>
       <p>
         Bien que le développement web soit au cœur de mon activité, je suis
-        également passionné par la création de jeux vidéo. Actuellement, je
-        travaille sur un projet personnel appelé Suihira, où je développe non
-        seulement le jeu, mais compose aussi la musique. De plus, je suis en
-        train de développer un moteur de jeu 2D, ce qui enrichit encore mes
-        compétences techniques et ma compréhension du processus de création de
-        jeux.
+        également passionné par la création de jeux vidéo, d'application...
+
       </p>
       <p>
         Je suis toujours à la recherche de nouveaux défis et de collaborations
@@ -79,29 +83,22 @@ onMounted(() => {
   justify-content: space-around;
   gap: rem(30) 0;
   flex-wrap: wrap;
-  &__img {
-    width: 100%;
-    @include small-up {
-      width: 30%;
-      max-width: 400px;
-    }
-  }
 
   &__txt {
     display: flex;
-    color: #000;
+    color: #fff;
     flex-direction: column;
     gap: rem(28);
     font-size: rem(20);
     width: 100%;
+
     @include small-up {
       width: 40%;
     }
+
     p {
       @media screen and (min-width: 800px) {
-        display: flex;
-        max-width: 500px;
-        flex-direction: column;
+        max-width: 768px;
         opacity: 0;
       }
     }

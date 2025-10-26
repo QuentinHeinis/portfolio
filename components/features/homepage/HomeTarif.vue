@@ -236,9 +236,11 @@ const pricingPlans = ref([
             border: 2px solid #eee;
             border-radius: 10px;
             padding: 50px 30px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            
             transition: all 0.3s ease;
-
+            @include medium-up{
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            }
             &.featured {
                 border-color: #f15a52;
             }

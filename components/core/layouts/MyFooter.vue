@@ -5,9 +5,6 @@ defineProps({
 </script>
 
 <template>
-  <div class="footer__separator">
-    <MyGridBg :gradient="true" />
-  </div>
 
 
   <footer class="footer">
@@ -24,7 +21,7 @@ defineProps({
       class="footer__footer">
       <div class="footer__content">
         <div class="footer__logo">
-          <NuxtImg src="/img/logoblack.png" alt="Logo du site" loading="lazy" />
+          <NuxtImg src="/logo-dark.svg" alt="Logo du site" loading="lazy" />
         </div>
         <div class="footer__links">
           <NuxtLink to="/">Accueil</NuxtLink>
@@ -69,18 +66,6 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
-.footer__separator {
-  margin-top: rem(-40);
-  width: 100%;
-  height: rem(75);
-  position: relative;
-  border-top-left-radius: rem(20);
-  border-top-right-radius: rem(20);
-  overflow: hidden;
-  z-index: 1;
-}
-
-
 .footer {
   max-width: 100%;
   overflow-x: clip;
