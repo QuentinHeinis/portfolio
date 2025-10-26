@@ -88,7 +88,7 @@ onMounted(() => {
         </div>
 
         <div class="pricing-cards">
-            <NuxtLink :to="plan.button.link" v-for="(plan, index) in pricingPlans" :key="index" class="pricing-card-wrapper">
+            <div v-for="(plan, index) in pricingPlans" :key="index" class="pricing-card-wrapper">
                 <div :class="['pricing-card', plan.name === 'Business' ? 'featured' : '']">
                     <span class="plan-name">{{ plan.name }}</span>
                     <h2 class="plan-price">
@@ -189,7 +189,7 @@ onMounted(() => {
                         </svg>
                     </span>
                 </div>
-            </NuxtLink>
+            </div>
         </div>
         <div class="additional-services">
             <p>
