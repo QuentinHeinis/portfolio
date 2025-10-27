@@ -73,12 +73,14 @@ onMounted(() => {
         gap: 40px;
         justify-content: center;
         align-items: center;
-
         flex-direction: column;
-
+        
         @include medium-up {
             flex-direction: row;
         }
+
+        /* Opacité par défaut pour éviter le flash */
+        opacity: 0;
     }
 
     .line {
@@ -93,6 +95,9 @@ onMounted(() => {
             &.o {
                 height: 40px;
             }
+
+            /* Opacité par défaut pour éviter le flash */
+            opacity: 0;
         }
     }
 
@@ -100,6 +105,10 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        /* Opacité par défaut pour éviter le flash */
+        opacity: 0;
     }
 }
+
 </style>
