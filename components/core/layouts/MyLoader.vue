@@ -36,7 +36,7 @@ onMounted(() => {
               y: 0,
               opacity: 1,
             }
-        , "-=0.3")  // Même correction ici
+        , "-=0.3")  
         .to(".preloader", {
             yPercent: -100,
             duration: 1,
@@ -105,7 +105,7 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      .line:last-child{
+      .line:last-child, .line:first-child img{
         opacity : 0;
       }
     }
