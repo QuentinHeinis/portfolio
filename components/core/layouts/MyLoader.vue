@@ -6,27 +6,36 @@ const loaderAnime = useState("loaderAnime");
 onMounted(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.from(".logo > div:first-child img", {
+    tl.fromTo(".logo > div:first-child img", {
         opacity: 0,
         scale: 0.7,
         duration: 0.8,
+    },{
+        opacity: 1,
+        scale: 1,
     })
-        .from(
+        .fromTo(
             ".text .line:first-child img",
             {
                 y: 40,
                 opacity: 0,
                 duration: 0.6,
-            },
+            },{
+              y: 0,
+              opacity: 1,
+            }
             "-=0.3"
         )
-        .from(
+        .fromTo(
             ".text .line:last-child",
             {
                 y: 40,
                 opacity: 0,
                 duration: 0.6,
-            },
+            },{
+              y: 0,
+              opacity: 1,
+            }
             "-=0.3"
         )
         .to(".preloader", {
@@ -75,6 +84,10 @@ onMounted(() => {
       @include medium-up {
         flex-direction: row;
       }
+
+      & > div:first-child img{
+        opacity:0;
+      }
     }
     .line {
       display: flex;
@@ -92,6 +105,9 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      .line:last-child{
+        opacity : 0;
+      }
     }
   }
 </style>
