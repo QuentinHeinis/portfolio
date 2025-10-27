@@ -68,7 +68,7 @@ onMounted(() => {
     display: grid;
     place-content: center;
 
-    /* S'assurer que la preloader reste visible au départ */
+    /* La preloader doit être visible */
     opacity: 1;
 
     .logo {
@@ -77,34 +77,17 @@ onMounted(() => {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        
+
         @include medium-up {
             flex-direction: row;
         }
+        
+        /* Pas de opacité ici, elle sera animée */
+    }
 
-        /* Initialement invisible, mais sera animé */
+    .logo > div:first-child img {
+        /* Logo doit être invisible au départ */
         opacity: 0;
-
-        .line {
-            display: flex;
-            align-items: baseline;
-            gap: rem(6);
-            height: 50px;
-
-            /* Initialement invisible */
-            opacity: 0;
-
-            img {
-                height: 50px;
-
-                &.o {
-                    height: 40px;
-                }
-
-                /* Initialement invisible */
-                opacity: 0;
-            }
-        }
     }
 
     .text {
@@ -112,10 +95,30 @@ onMounted(() => {
         flex-direction: column;
         gap: 20px;
 
+        /* Pas d'opacité ici non plus, elle sera animée */
+    }
+
+    .text .line {
+        display: flex;
+        align-items: baseline;
+        gap: rem(6);
+        height: 50px;
+
         /* Initialement invisible */
         opacity: 0;
     }
+
+    .text .line:first-child img {
+        /* Première image de la ligne de texte invisible au départ */
+        opacity: 0;
+    }
+
+    .text .line:last-child {
+        /* Dernière ligne de texte invisible au départ */
+        opacity: 0;
+    }
 }
+
 
 
 </style>
