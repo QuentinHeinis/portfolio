@@ -24,8 +24,8 @@ onMounted(() => {
               y: 0,
               opacity: 1,
             }
-            "-=0.3"
-        )
+        , "-=0.3")  =
+        
         .fromTo(
             ".text .line:last-child",
             {
@@ -36,8 +36,7 @@ onMounted(() => {
               y: 0,
               opacity: 1,
             }
-            "-=0.3"
-        )
+        , "-=0.3")  // Même correction ici
         .to(".preloader", {
             yPercent: -100,
             duration: 1,
@@ -46,6 +45,7 @@ onMounted(() => {
             onComplete: () => { loaderAnime.value = true }
         });
 });
+
 </script>
 
 <template>
