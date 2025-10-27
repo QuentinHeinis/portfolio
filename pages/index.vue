@@ -25,7 +25,7 @@ useSeoMeta({
   <MySection id="03" section-name="Mes tarifs" class="section" background-color="#e3d7c0" text-color="#000" overflow="hidden">
     <HomeTarif/>
   </MySection>
-  <MySection id="04" section-name="À propos" class="section" background-color="#090a11" text-color="#fff" overflow="hidden">
+  <MySection id="04" section-name="A propos" class="section" background-color="#090a11" text-color="#fff" overflow="hidden">
     <HomeAbout/>
   </MySection>
 
