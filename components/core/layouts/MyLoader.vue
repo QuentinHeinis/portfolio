@@ -24,7 +24,7 @@ onMounted(() => {
               y: 0,
               opacity: 1,
             }
-        , "-=0.3")  =
+        , "-=0.3") 
         
         .fromTo(
             ".text .line:last-child",
