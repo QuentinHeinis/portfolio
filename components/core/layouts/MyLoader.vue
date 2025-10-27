@@ -57,68 +57,41 @@ onMounted(() => {
         </div>
     </div>
 </template>
-
 <style lang="scss" scoped>
-.preloader {
+  .preloader {
     position: fixed;
     z-index: 1000;
     height: 100vh;
     width: 100vw;
-    background: #D2BE9F;
+    background: #d2be9f;
     display: grid;
     place-content: center;
-
-    /* La preloader doit être visible */
-    opacity: 1;
-
     .logo {
-        display: flex;
-        gap: 40px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        @include medium-up {
-            flex-direction: row;
-        }
-        
-        /* Pas de opacité ici, elle sera animée */
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      @include medium-up {
+        flex-direction: row;
+      }
     }
-
-    .logo > div:first-child img {
-        /* Logo doit être invisible au départ */
-        opacity: 0;
-    }
-
-    .text {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        /* Pas d'opacité ici non plus, elle sera animée */
-    }
-
-    .text .line {
-        display: flex;
-        align-items: baseline;
-        gap: rem(6);
+    .line {
+      display: flex;
+      align-items: baseline;
+      gap: rem(6);
+      height: 50px;
+      img {
         height: 50px;
-
-        /* Initialement invisible */
-        opacity: 0;
+        &.o {
+          height: 40px;
+        }
+      }
     }
-
-    .text .line:first-child img {
-        /* Première image de la ligne de texte invisible au départ */
-        opacity: 0;
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-
-    .text .line:last-child {
-        /* Dernière ligne de texte invisible au départ */
-        opacity: 0;
-    }
-}
-
-
-
+  }
 </style>
