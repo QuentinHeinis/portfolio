@@ -68,6 +68,9 @@ onMounted(() => {
     display: grid;
     place-content: center;
 
+    /* S'assurer que la preloader reste visible au départ */
+    opacity: 1;
+
     .logo {
         display: flex;
         gap: 40px;
@@ -79,25 +82,28 @@ onMounted(() => {
             flex-direction: row;
         }
 
-        /* Opacité par défaut pour éviter le flash */
+        /* Initialement invisible, mais sera animé */
         opacity: 0;
-    }
 
-    .line {
-        display: flex;
-        align-items: baseline;
-        gap: rem(6);
-        height: 50px;
-
-        img {
+        .line {
+            display: flex;
+            align-items: baseline;
+            gap: rem(6);
             height: 50px;
 
-            &.o {
-                height: 40px;
-            }
-
-            /* Opacité par défaut pour éviter le flash */
+            /* Initialement invisible */
             opacity: 0;
+
+            img {
+                height: 50px;
+
+                &.o {
+                    height: 40px;
+                }
+
+                /* Initialement invisible */
+                opacity: 0;
+            }
         }
     }
 
@@ -106,9 +112,10 @@ onMounted(() => {
         flex-direction: column;
         gap: 20px;
 
-        /* Opacité par défaut pour éviter le flash */
+        /* Initialement invisible */
         opacity: 0;
     }
 }
+
 
 </style>
