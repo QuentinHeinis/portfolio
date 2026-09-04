@@ -16,36 +16,82 @@ const props = defineProps({
 const text = ref();
 
 let mm;
+let initDone = false;
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
-onMounted(() => {
-  gsap.fromTo(".project-description__text p", { opacity: 0 }, { opacity: 1 });
+
+const init = () => {
+  if (initDone || !text.value) return;
+
+  const paragraphs = text.value.querySelectorAll("p");
+  if (paragraphs.length === 0) return;
+
+  initDone = true;
   mm = gsap.matchMedia();
-  mm.add("screen and (min-width: 768px)", () => {
-    for (let paragraph of text.value.children) {
-      const split = SplitText.create(paragraph, {
-        type: "lines",
+  mm.add(
+    {
+      isDesktop: "(min-width: 800px)",
+      isMobile: "(max-width: 799px)",
+    },
+    (context) => {
+      const { isDesktop, isMobile } = context.conditions;
+
+      paragraphs.forEach((p) => {
+        if (isDesktop) {
+          gsap.set(p, { opacity: 1 });
+
+          const split = SplitText.create(p, { type: "lines" });
+
+          gsap.set(split.lines, { y: 60, autoAlpha: 0 });
+          gsap.to(split.lines, {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.9,
+            ease: "power3.out",
+            stagger: 0.06,
+            scrollTrigger: {
+              trigger: p,
+              start: "top 92%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        } else if (isMobile) {
+          gsap.set(p, { clearProps: "opacity" });
+        }
       });
 
-      gsap.from(split.lines, {
-        translateY: 50,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.04,
-        scrollTrigger: {
-          trigger: paragraph,
-          start: "top bottom-=50px",
-          toggleActions: "play none none reverse",
-        },
-      });
+      ScrollTrigger.refresh();
     }
-  });
+  );
+};
+
+const tryInit = () => {
+  if (text.value?.querySelectorAll("p").length) {
+    init();
+  }
+};
+
+onMounted(() => {
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => {
+      ScrollTrigger.refresh();
+      init();
+    });
+  } else {
+    init();
+  }
+  window.addEventListener("load", tryInit);
 });
 
+watch(
+  () => props.description,
+  () => nextTick(tryInit),
+  { deep: true }
+);
+
 onBeforeUnmount(() => {
+  window.removeEventListener("load", tryInit);
   mm?.revert();
-  ScrollTrigger.getAll().forEach((t) => t.kill());
 });
 </script>
 
@@ -122,6 +168,7 @@ onBeforeUnmount(() => {
       @media screen and (min-width: 800px) {
         width: 500px;
         opacity: 0;
+        overflow: hidden;
       }
     }
   }

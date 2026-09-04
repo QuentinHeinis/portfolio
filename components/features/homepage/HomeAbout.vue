@@ -5,42 +5,62 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const text = ref<HTMLElement>();
 
+let mm: ReturnType<typeof gsap.matchMedia> | null = null;
+
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+const init = () => {
+  if (!text.value) return;
+
+  mm = gsap.matchMedia();
+  mm.add(
+    {
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)",
+    },
+    (context) => {
+      const { isDesktop, isMobile } = context.conditions;
+      const paragraphs = text.value.querySelectorAll("p");
+
+      if (isDesktop) {
+        gsap.set(paragraphs, { opacity: 1 });
+
+        paragraphs.forEach((p) => {
+          const split = SplitText.create(p, { type: "lines" });
+
+          gsap.from(split.lines, {
+            y: 60,
+            autoAlpha: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            stagger: 0.06,
+            scrollTrigger: {
+              trigger: p,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        });
+      } else if (isMobile) {
+        gsap.set(paragraphs, { clearProps: "opacity" });
+      }
+
+      ScrollTrigger.refresh();
+    }
+  );
+};
+
 onMounted(() => {
-  gsap.fromTo(".about__txt p", { opacity: 0 }, { opacity: 1 });
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(init);
+  } else {
+    init();
+  }
+});
 
-  let mm = gsap.matchMedia();
-  mm.add("screen and (min-width: 768px)", () => {
-    if (!text.value) return;
-
-    // Split chaque paragraphe en lettres
-    const paragraphs = text.value.querySelectorAll("p");
-    paragraphs.forEach((p) => {
-      const split = SplitText.create(p, {
-        type: "words, lines", // on split en mots et lignes
-        mask: "lines", // ajoute un masque autour de chaque ligne
-        linesClass: "line++", // ajoute .line1, .line2, etc.
-      });
-
-      // Animation par ligne et mot
-      gsap.from(split.words, {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: {
-          each: 0.02,
-          from: "start",
-        },
-        scrollTrigger: {
-          trigger: p,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-  });
+onBeforeUnmount(() => {
+  mm?.revert();
+  ScrollTrigger.getAll().forEach((t) => t.kill());
 });
 </script>
 
@@ -95,6 +115,7 @@ onMounted(() => {
       @media screen and (min-width: 800px) {
         max-width: 768px;
         opacity: 0;
+        overflow: hidden;
       }
     }
   }
