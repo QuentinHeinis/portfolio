@@ -16,7 +16,7 @@ const { client } = usePrismic();
 const { data: myprojects } = await useAsyncData("home-projects", () => {
   return client.getSingle("projectlist");
 });
-console.log(myprojects.value);
+
 
 const featuredProjects = computed(() => {
   if (!myprojects.value) return [];
