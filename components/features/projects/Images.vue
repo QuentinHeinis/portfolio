@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 const props = defineProps({
@@ -7,8 +7,13 @@ const props = defineProps({
 });
 gsap.registerPlugin(ScrollTrigger);
 
-onMounted(() => {
-  let mm = gsap.matchMedia();
+let mm: ReturnType<typeof gsap.matchMedia> | null = null;
+
+const initParallax = () => {
+  if (mm) {
+    mm.kill();
+  }
+  mm = gsap.matchMedia();
   mm.add("screen and (min-width: 768px)", () => {
     gsap.utils
       .toArray(".section-parallax .parallax-content")
@@ -36,6 +41,28 @@ onMounted(() => {
         );
       });
   });
+};
+
+const loaded = ref(0);
+const total = computed(() => props.imgs?.length ?? 0);
+const allLoaded = computed(() => loaded.value >= total.value);
+
+const onImgLoad = () => {
+  loaded.value++;
+  if (allLoaded.value) {
+    nextTick(() => initParallax());
+  }
+};
+
+onMounted(() => {
+  if (allLoaded.value) {
+    nextTick(() => initParallax());
+  }
+});
+
+onBeforeUnmount(() => {
+  if (mm) mm.kill();
+  ScrollTrigger.getAll().forEach((t) => t.kill());
 });
 </script>
 
@@ -52,7 +79,7 @@ onMounted(() => {
         class="parallax-content"
         :class="img.project_image.url.includes('.gif') && 'gif'"
       >
-        <NuxtImg :src="img.project_image.url" preload alt="" />
+        <NuxtImg :src="img.project_image.url" preload alt="" @load="onImgLoad" />
       </div>
     </div>
   </MySection>

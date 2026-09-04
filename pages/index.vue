@@ -1,34 +1,30 @@
 <script lang="ts" setup>
 const footerId = useState("footerId");
-footerId.value = "04";
+footerId.value = "03";
+const projetsSection = ref();
 
 useSeoMeta({
-  title: "Quentin Heinis | conception de site en Alsace et le Doubs",
-  ogTitle: "Quentin Heinis | conception de site en Alsace et le Doubs",
+  title: "Quentin Heinis | Portfolio - Développeur Fullstack",
+  ogTitle: "Quentin Heinis | Portfolio - Développeur Fullstack",
   description:
-    "Quentin Heinis | Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
+    "Quentin Heinis | Développeur fullstack passionné. Découvrez mes projets et créations web.",
   ogDescription:
-    "Quentin Heinis | Spécialisé dans la conception de sites internet sur mesure. J'accompagne les entreprises dans la création de solutions web adaptées à leurs besoins.",
+    "Quentin Heinis | Développeur fullstack passionné. Découvrez mes projets et créations web.",
   ogImage: "/favicon.png",
 });
 </script>
 
 <template>
   <MyHero />
-  <MySection id="01" section-name="Mes prestations" background-color="#e3d7c0" text-color="#000" class="section">
-    <HomePrestations />
+  <MySection ref="projetsSection" id="01" section-name="Mes projets" class="section" background-color="#e3d7c0" text-color="#000" overflow="hidden">
+    <HomeProjets :sectionEl="projetsSection?.sectionEl" />
   </MySection>
-  <MySection id="02" section-name="Mon approche" class="section" background-color="#090a11" overflow="hidden">
-    <HomeApproche />
-  </MySection>
-
-  <MySection id="03" section-name="Mes tarifs" class="section" background-color="#e3d7c0" text-color="#000" overflow="hidden">
-    <HomeTarif/>
-  </MySection>
-  <MySection id="04" section-name="A propos" class="section" background-color="#090a11" text-color="#fff" overflow="hidden">
+  <MySection id="02" section-name="A propos" class="section" background-color="#090a11" text-color="#fff" overflow="hidden">
     <HomeAbout/>
   </MySection>
-
+  <MySection id="03" section-name="Mon processus" class="section" background-color="#e3d7c0" text-color="#000" overflow="hidden">
+    <HomeApproche />
+  </MySection>
 </template>
 
 <style lang="scss" scoped>

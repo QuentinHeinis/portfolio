@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+const sectionEl = ref<HTMLElement>();
+
+defineExpose({ sectionEl });
+
 defineProps({
   overlapTop: {
     type: Boolean,
@@ -28,6 +32,7 @@ defineProps({
 
 <template>
   <section
+    ref="sectionEl"
     class="section"
     :class="{ '-overlapTop': overlapTop, '-isOverlapped': isOverlap }"
     :id="sectionName?.split(' ').join('-').toLowerCase()"

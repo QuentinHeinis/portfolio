@@ -45,7 +45,12 @@ const pageLoaded = () => {
     delay: 0.8,
     onStart: () => {
       setTimeout(() => {
-        window.scrollTo(0, 0);
+        if (route.hash) {
+          const el = document.querySelector(route.hash);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo(0, 0);
+        }
       }, 150);
     },
   });

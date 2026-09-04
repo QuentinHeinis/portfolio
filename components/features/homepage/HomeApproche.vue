@@ -1,266 +1,268 @@
-<script setup>
-import { onMounted } from "vue";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+<script setup lang="ts">
+const openIndex = ref<number | null>(null);
+const list = ref<HTMLElement>();
+const effect = ref<HTMLElement>();
 
-gsap.registerPlugin(ScrollTrigger);
+const steps = [
+  {
+    num: "01",
+    title: "Écoute & Analyse",
+    text: "Je commence par comprendre vos besoins, votre secteur et vos objectifs pour poser les bases d'un projet réussi.",
+    video: "/video/circularFluid.mp4",
+  },
+  {
+    num: "02",
+    title: "Conception",
+    text: "Je conçois l'architecture et le design de votre projet, en validant chaque étape avec vous avant de passer au développement.",
+    video: "/video/circularFluid-blue.mp4",
+  },
+  {
+    num: "03",
+    title: "Développement",
+    text: "Je développe votre projet avec des technologies modernes et performantes, en assurant qualité et maintenance du code.",
+    video: "/video/circularFluid-purple.mp4",
+  },
+  {
+    num: "04",
+    title: "Livraison & Suivi",
+    text: "Je vous accompagne après la mise en ligne : formation, ajustements et support pour garantir le bon fonctionnement.",
+    video: "/video/circularFluid.mp4",
+  },
+];
 
+const toggle = (index: number) => {
+  openIndex.value = openIndex.value === index ? null : index;
+};
 
-onMounted(() => {
-  const cards = gsap.utils.toArray(".approche__card");
-  const section = document.querySelector(".approche");
+const handleEffect = (e: MouseEvent) => {
+  if (!list.value || !effect.value) return;
 
-  const mm = gsap.matchMedia();
-  
+  const myList = list.value.getBoundingClientRect();
+  const mouseY = e.clientY - myList.top;
 
-  mm.add(
-    {
-      isDesktop: "(min-width: 769px)",
-      isMobile: "(max-width: 768px)",
-    },
-    (context) => {
-      const { isDesktop, isMobile } = context.conditions;
+  for (const item of list.value.children) {
+    const title = item.children[0] as HTMLElement;
+    const desc = item.children[1] as HTMLElement;
+    const itemTop = title.getBoundingClientRect().top - myList.top;
+    const itemBottom = desc.getBoundingClientRect().bottom - myList.top;
 
-      if (isDesktop) {
-        // Animation desktop
-        gsap.set(cards, {
-          position: "absolute",
-          top: "50%",
-          left: "0",
-          xPercent: 0,
-          yPercent: -50,
-          opacity: 0,
-          x: (i) => 300 + i * 40,
-          y: 0,
-          scale: 0.95,
-          rotate: (i) => (i % 2 === 0 ? -5 : 5),
-          transformOrigin: "center center",
-          zIndex: (i) => i + 1,
-        });
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: "+=" + cards.length * 400 + "px",
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-          },
-        });
-
-        cards.forEach((card, i) => {
-          tl.to(
-            card,
-            {
-              opacity: 1,
-              x: i * 90,
-              y: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "power2.out",
-            },
-            i
-          );
-
-          if (i > 0) {
-            tl.to(
-              cards[i - 1],
-              {
-                scale: 0.96,
-                duration: 0.4,
-              },
-              i
-            );
-          }
-        });
-      }
-
-      if (isMobile) {
-        // Mobile : empilement vertical + reveal au scroll
-        gsap.set(cards, {
-          position: "relative",
-          top: 0,
-          left: 0,
-          x: 0,
-          y: 50,
-          scale: 1,
-          rotate: 0,
-          opacity: 0,
-          zIndex: 1,
-        });
-
-        cards.forEach((card) => {
-          gsap.to(card, {
-            scrollTrigger: {
-              trigger: card,
-              start: "top 85%", // quand la card arrive dans la viewport
-              toggleActions: "play none none reverse",
-            },
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          });
-        });
-      }
+    if (mouseY >= itemTop && mouseY < itemBottom) {
+      effect.value.style.top = itemTop + "px";
+      return;
     }
-  );
-});
+  }
 
-onBeforeUnmount(()=>{
-  ScrollTrigger.getAll().forEach((trigger)=>trigger.kill())
-})
+  effect.value.style.top = "0px";
+};
 </script>
 
-
 <template>
-  <ul class="approche">
-    <li class="approche__card">
-      <MyGridBg background="#090a11" />
-      <div class="approche__video">
-        <video src="/video/circularFluid.mp4" muted playsinline autoplay loop />
-      </div>
-      <div class="approche__text">
-        <h3>Approche personnalisée :</h3>
-        <p>
-          Je suis à l'écoute de vos besoins et m'engage à créer une solution qui
-          vous ressemble.
-        </p>
-      </div>
-    </li>
-
-    <li class="approche__card">
-      <MyGridBg background="#090a11" />
-      <div class="approche__video">
-        <video src="/video/circularFluid-blue.mp4" muted playsinline autoplay loop />
-      </div>
-      <div class="approche__text">
-        <h3>Design sur mesure :</h3>
-        <p>
-          Je conçois le design de votre site pour qu'il reflète parfaitement
-          votre vision.
-        </p>
-      </div>
-    </li>
-
-    <li class="approche__card">
-      <MyGridBg background="#090a11" />
-      <div class="approche__video">
-        <video src="/video/circularFluid-purple.mp4" muted playsinline autoplay loop />
-      </div>
-      <div class="approche__text">
-        <h3>Choix de template :</h3>
-        <p>
-          Vous pouvez aussi opter pour un template que nous personnaliserons
-          ensemble.
-        </p>
-      </div>
-    </li>
-
-    <li class="approche__card">
-      <MyGridBg background="#090a11" />
-      <div class="approche__video">
-        <video src="/video/circularFluid.mp4" muted playsinline autoplay loop />
-      </div>
-      <div class="approche__text">
-        <h3>Votre design, votre choix :</h3>
-        <p>
-          Si vous avez déjà une idée précise, je peux intégrer votre propre
-          design.
-        </p>
-      </div>
-    </li>
-
-    <li class="approche__card">
-      <MyGridBg background="#090a11" />
-      <div class="approche__video">
-        <video src="/video/circularFluid-blue.mp4" muted playsinline autoplay loop />
-      </div>
-      <div class="approche__text">
-        <h3>Collaboration avec des experts :</h3>
-        <p>
-          Pour des demandes spécifiques, je peux faire appel à des freelances
-          spécialisés.
-        </p>
-      </div>
-    </li>
-  </ul>
+  <div class="process">
+    <span class="process__effect" ref="effect"></span>
+    <ul
+      class="process__list"
+      ref="list"
+      @mousemove="handleEffect"
+      @click="(e) => { handleEffect(e); }"
+    >
+      <li
+        v-for="(step, i) in steps"
+        :key="step.num"
+        :class="['process__item', { '-open': openIndex === i }]"
+      >
+        <div class="process__item-title" @click="toggle(i)">
+          <span class="process__item-num">{{ step.num }}</span>
+          <p>{{ step.title }}</p>
+          <span class="process__item-chevron">
+            <span></span>
+          </span>
+        </div>
+        <div class="process__item-desc">
+          <div class="process__item-desc-content">
+            <div class="process__item-inner">
+              <div class="process__item-text">
+                <p>{{ step.text }}</p>
+              </div>
+              <div class="process__item-video">
+                <video :src="step.video" muted playsinline autoplay loop />
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.approche {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.process {
   position: relative;
-  max-width: $lg;
+  max-width: $xl;
   margin-inline: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: rem(20);
 
-  @include medium-up {
-    height: 100vh;
-    flex-direction: row;
+  &__effect {
+    height: 80px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    opacity: 0;
+    background: rgb(0, 0, 0);
+    transition: all 0.3s ease;
   }
 
-  &__card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid #fff;
-    border-radius: rem(8);
-    position: absolute;
-    max-width: rem(450);
-    background: #090a11;
-    overflow: hidden;
-    counter-increment: list-count 1;
-    opacity: 0;
-    transform-origin: center center;
+  &:hover &__effect {
+    opacity: 1;
+  }
 
-    &::after {
-      content: counter(list-count, decimal-leading-zero);
-      position: absolute;
-      top: 10px;
-      left: 10px;
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    width: 100%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: #000000;
+
+    &-title {
+      position: relative;
+      transition: all 0.3s ease;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      font-family: "Asgard", sans-serif;
+      gap: rem(16);
+      padding-right: rem(60);
+
+      &:hover {
+        color: #e3d7c0;
+        padding-left: rem(12);
+      }
+
+      &:hover .process__item-chevron {
+        scale: 1;
+        rotate: 0deg;
+        background: #f15a52;
+
+        span {
+          border-color: #000;
+        }
+      }
+    }
+
+    &-num {
+      font-family: "Asgard", sans-serif;
+      font-weight: 900;
       font-size: rem(14);
       opacity: 0.5;
     }
-  }
 
-  &__text {
-    padding: rem(20) rem(40);
-    border-top: 1px solid #fff;
-
-    h3 {
-      margin-bottom: rem(20);
-      font-weight: 900;
-      text-transform: uppercase;
-      font-family: "Asgard", sans-serif;
-    }
-  }
-
-  &__video {
-    display: grid;
-    place-items: center;
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-
-    @include medium-up {
-      overflow: hidden;
-    }
-
-    video {
+    &-desc {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: 250ms grid-template-rows ease;
       width: 100%;
+
+      &-content {
+        overflow: hidden;
+
+        & > div {
+          padding: 20px;
+        }
+      }
+    }
+
+    &-inner {
+      display: flex;
+      gap: rem(30);
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-video {
+      display: none;
       height: 100%;
-      object-fit: cover;
-      mix-blend-mode: screen;
+      padding-right: rem(16);
+
+      @include medium-up {
+        display: block;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+        max-width: rem(300);
+        max-height: rem(300);
+        object-fit: contain;
+      }
+    }
+
+    &-text {
+      max-width: $sm;
+      p {
+        border-left: 1px solid #000;
+        padding-left: rem(16);
+        font-size: rem(16);
+        color: #333;
+        line-height: 1.6;
+      }
+    }
+
+    &-chevron {
+      position: absolute;
+      right: rem(20);
+      width: rem(36);
+      height: rem(36);
+      display: grid;
+      place-items: center;
+      background: #000;
+      border-radius: 50%;
+      scale: 0.2;
+      rotate: 45deg;
+      transition: all 0.3s cubic-bezier(0.3, 0.2, 0.2, 1.8);
+      pointer-events: none;
+
+      span {
+        transition: all 0.5s ease;
+        display: block;
+        width: rem(12);
+        height: rem(12);
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        rotate: 45deg;
+        translate: 0 -2px;
+      }
+    }
+
+    &.-open > .process__item-desc {
+      grid-template-rows: 1fr;
+    }
+
+    &.-open > .process__item-title {
+      color: #000000;
+      padding-left: rem(12);
+    }
+
+    &.-open:hover > .process__item-title {
+      color: #e3d7c0;
+      padding-left: rem(12);
+    }
+
+    &.-open > .process__item-title .process__item-chevron {
+      scale: 1;
+      rotate: 180deg;
+      background: #f15a52;
+
+      span {
+        border-color: #000;
+      }
     }
   }
-
 }
 </style>
