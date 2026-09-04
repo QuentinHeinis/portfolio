@@ -8,25 +8,25 @@ const steps = [
     num: "01",
     title: "Écoute & Analyse",
     text: "Je commence par comprendre vos besoins, votre secteur et vos objectifs pour poser les bases d'un projet réussi.",
-    video: "/video/circularFluid.mp4",
+    img: "/graphics/76.png",
   },
   {
     num: "02",
     title: "Conception",
     text: "Je conçois l'architecture et le design de votre projet, en validant chaque étape avec vous avant de passer au développement.",
-    video: "/video/circularFluid-blue.mp4",
+    img: "/graphics/54.png",
   },
   {
     num: "03",
     title: "Développement",
     text: "Je développe votre projet avec des technologies modernes et performantes, en assurant qualité et maintenance du code.",
-    video: "/video/circularFluid-purple.mp4",
+    img: "/graphics/11.png",
   },
   {
     num: "04",
     title: "Livraison & Suivi",
     text: "Je vous accompagne après la mise en ligne : formation, ajustements et support pour garantir le bon fonctionnement.",
-    video: "/video/circularFluid.mp4",
+    img: "/graphics/55.png",
   },
 ];
 
@@ -84,7 +84,7 @@ const handleEffect = (e: MouseEvent) => {
                 <p>{{ step.text }}</p>
               </div>
               <div class="process__item-video">
-                <video :src="step.video" muted playsinline autoplay loop />
+                <NuxtImg :src="step.img" alt="" />
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ const handleEffect = (e: MouseEvent) => {
         display: block;
       }
 
-      video {
+      img {
         width: 100%;
         height: auto;
         max-width: rem(300);
