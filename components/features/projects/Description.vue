@@ -1,7 +1,7 @@
 <script setup>
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { stringListToHTML, stringSplitter } from "~/utils/stringSplitter";
 
 const props = defineProps({
   description: {
@@ -15,31 +15,37 @@ const props = defineProps({
 
 const text = ref();
 
-gsap.registerPlugin(ScrollTrigger);
+let mm;
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 onMounted(() => {
-  let mm = gsap.matchMedia();
   gsap.fromTo(".project-description__text p", { opacity: 0 }, { opacity: 1 });
+  mm = gsap.matchMedia();
   mm.add("screen and (min-width: 768px)", () => {
     for (let paragraph of text.value.children) {
-      stringListToHTML(stringSplitter(paragraph.innerText, 38), paragraph);
-    }
-    gsap.set(".project-description__text p span", {
-      translateY: 50,
-      opacity: 0,
-    });
+      const split = SplitText.create(paragraph, {
+        type: "lines",
+      });
 
-    const spans = gsap.utils.toArray(".project-description__text p span");
-    spans.forEach((span) => {
-      gsap.to(span, {
-        translateY: 0,
-        opacity: 1,
+      gsap.from(split.lines, {
+        translateY: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.04,
         scrollTrigger: {
-          trigger: span,
+          trigger: paragraph,
           start: "top bottom-=50px",
+          toggleActions: "play none none reverse",
         },
       });
-    });
+    }
   });
+});
+
+onBeforeUnmount(() => {
+  mm?.revert();
+  ScrollTrigger.getAll().forEach((t) => t.kill());
 });
 </script>
 
@@ -114,9 +120,7 @@ onMounted(() => {
     font-size: rem(28);
     p {
       @media screen and (min-width: 800px) {
-        display: flex;
         width: 500px;
-        flex-direction: column;
         opacity: 0;
       }
     }
