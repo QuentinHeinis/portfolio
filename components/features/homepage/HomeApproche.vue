@@ -7,25 +7,25 @@ const steps = [
   {
     num: "01",
     title: "Écoute & Analyse",
-    text: "Je commence par comprendre vos besoins, votre secteur et vos objectifs pour poser les bases d'un projet réussi.",
+    text: "On échange sur votre projet, vos objectifs et votre audience. Cette phase me permet de cerner vos besoins et de poser des bases solides avant de passer à la conception.",
     img: "/graphics/76.png",
   },
   {
     num: "02",
     title: "Conception",
-    text: "Je conçois l'architecture et le design de votre projet, en validant chaque étape avec vous avant de passer au développement.",
+    text: "Je structure l'architecture technique et le design de votre projet. Chaque décision est validée avec vous pour garantir un résultat fidèle à votre vision.",
     img: "/graphics/54.png",
   },
   {
     num: "03",
     title: "Développement",
-    text: "Je développe votre projet avec des technologies modernes et performantes, en assurant qualité et maintenance du code.",
+    text: "Je passe au code. Technologies modernes, performances optimisées, code propre et maintenable — chaque détail compte pour un résultat à la hauteur.",
     img: "/graphics/11.png",
   },
   {
     num: "04",
     title: "Livraison & Suivi",
-    text: "Je vous accompagne après la mise en ligne : formation, ajustements et support pour garantir le bon fonctionnement.",
+    text: "Votre projet est en ligne, mais ce n'est que le début. Formation, ajustements, support — je reste disponible pour assurer la pérennité de votre solution.",
     img: "/graphics/55.png",
   },
 ];

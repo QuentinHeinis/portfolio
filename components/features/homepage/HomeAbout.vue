@@ -50,28 +50,23 @@ onMounted(() => {
     <div class="about__txt" ref="text">
       <p>Bonjour !</p>
       <p>
-        Je suis Quentin, un développeur fullstack passionné de 22 ans. Diplômé
-        d'un BUT Métiers du Multimédia et de l'Internet, j'ai acquis une
-        expérience précieuse en alternance en tant que développeur web,
-        travaillant à la fois sur des projets internes pour une entreprise et en
-        agence pour divers clients.
+        Je suis Quentin, développeur fullstack basé en Franche-Comté. Diplômé
+        d'un BUT Métiers du Multimédia et de l'Internet, j'ai construit mon
+        expérience en alternance puis en agence, sur des projets variés — du
+        site vitrine à l'application web complexe.
       </p>
       <p>
-        Actuellement, je suis lead développeur à temps partiel pour une agence à
-        Lons-Le-Saunier où je supervise les projets web. En parallèle, je me
-        suis lancé en freelance en septembre 2024, offrant mes services en
-        développement web pour aider des entreprises et particulier à
-        concrétiser leurs idées.
+        Aujourd'hui lead développeur à temps partiel pour une agence à
+        Lons-Le-Saunier et freelancer en parallèle, j'accompagne entreprises
+        et particuliers dans la réalisation de leurs projets numériques.
       </p>
       <p>
-        Bien que le développement web soit au cœur de mon activité, je suis
-        également passionné par la création de jeux vidéo, d'application...
-
+        Au-delà du web, je suis aussi passionné par la création de jeux vidéo
+        et d'applications.
       </p>
       <p>
-        Je suis toujours à la recherche de nouveaux défis et de collaborations
-        enrichissantes. N’hésitez pas à me contacter si vous souhaitez discuter
-        de projets passionnants ou simplement échanger des idées !
+        Vous avez un projet en tête ou simplement envie d'échanger ?
+        N'hésitez pas à me contacter.
       </p>
     </div>
   </div>
